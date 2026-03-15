@@ -29,7 +29,6 @@ body{
   cursor:none;
 }
 
-/* grain overlay */
 body::before{
   content:'';
   position:fixed;inset:0;
@@ -41,7 +40,6 @@ body::before{
   mix-blend-mode:overlay;
 }
 
-/* ── IMAGE PROTECTION ─────────────────────────────────────── */
 img {
   -webkit-user-drag: none;
   user-drag: none;
@@ -52,7 +50,6 @@ img {
 .photo-item {
   position: relative;
 }
-/* transparent overlay blocks right-click / drag on the image */
 .photo-item::after {
   content: '';
   position: absolute;
@@ -70,9 +67,7 @@ img {
   inset: 0;
   z-index: 2;
 }
-/* ── END IMAGE PROTECTION ─────────────────────────────────── */
 
-/* custom cursor */
 .cursor{
   width:6px;height:6px;
   background:var(--accent);
@@ -92,7 +87,6 @@ img {
   z-index:9998;
   transform:translate(-50%,-50%);
   transition:transform .4s cubic-bezier(0.23,1,0.32,1),width .3s,height .3s,border-width .3s;
-  /* aperture lines */
   background:
     linear-gradient(rgba(212,197,169,0.25) 1px, transparent 1px),
     linear-gradient(90deg, rgba(212,197,169,0.25) 1px, transparent 1px);
@@ -110,7 +104,6 @@ img {
   background-position:center center;
 }
 
-/* NAV */
 nav{
   position:fixed;top:0;left:0;right:0;
   z-index:500;
@@ -118,15 +111,6 @@ nav{
   padding:24px 48px;
   background:linear-gradient(to bottom,rgba(15,13,11,0.7) 0%,transparent 100%);
 }
-.nav-logo{
-  font-family:'GFS Didot',serif;
-  font-size:1rem;font-weight:400;
-  letter-spacing:0.08em;
-  color:var(--muted);text-decoration:none;
-  transition:color .2s;
-}
-.nav-logo:hover{color:var(--fg);}
-.nav-logo span{font-style:italic;color:var(--accent2);}
 .nav-links{display:flex;gap:32px;list-style:none;}
 .nav-links a{
   font-family:monospace;
@@ -135,27 +119,17 @@ nav{
 }
 .nav-links a:hover{color:var(--accent);}
 
-/* HERO */
 .hero{
   min-height:100vh;
   display:grid;grid-template-columns:58% 42%;
   position:relative;overflow:hidden;
 }
 .hero-left{
-  display:flex;flex-direction:column;justify-content:flex-end;
-  padding:160px 60px 90px 100px;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:160px 60px 90px 80px;
   position:relative;z-index:2;
   background:linear-gradient(to right, rgba(15,13,11,0.97) 50%, rgba(15,13,11,0.6) 75%, transparent 100%);
   width:58%;
-}
-.hero-desc{
-  margin-top:32px;font-size:1.15rem;color:rgba(232,226,217,0.7);
-  max-width:480px;line-height:1.9;
-  opacity:0;animation:fadeUp .9s .85s forwards;
-}
-.hero-left{
-  display:flex;flex-direction:column;justify-content:flex-end;
-  padding:0 52px 90px 52px;position:relative;z-index:2;
 }
 .hero-eyebrow{
   font-family:monospace;font-size:0.6rem;
@@ -178,8 +152,8 @@ nav{
   opacity:0;animation:fadeUp .9s .7s forwards;
 }
 .hero-desc{
-  margin-top:32px;font-size:0.9rem;color:var(--muted);
-  max-width:320px;line-height:1.8;
+  margin-top:32px;font-size:1.2rem;color:rgba(232,226,217,0.75);
+  max-width:500px;line-height:2;
   opacity:0;animation:fadeUp .9s .85s forwards;
 }
 .hero-cta{margin-top:48px;opacity:0;animation:fadeUp .9s 1s forwards;}
@@ -191,9 +165,7 @@ nav{
   transition:background .25s,border-color .25s,color .25s;
 }
 .btn:hover{background:var(--accent);border-color:var(--accent);color:var(--bg);}
-.btn-outline{
-  background:none;border:1px solid var(--accent2);cursor:none;
-}
+.btn-outline{background:none;border:1px solid var(--accent2);cursor:none;}
 
 .hero-right{position:relative;overflow:hidden;}
 .hero-collage{
@@ -203,17 +175,12 @@ nav{
 .hero-collage-item{width:100%;height:100%;overflow:hidden;}
 .hero-collage-item img{
   width:100%;height:100%;object-fit:cover;object-position:center;
-  transition:transform 8s cubic-bezier(0.25,1,0.5,1);
   filter:grayscale(100%) contrast(1.15) brightness(0.75);
   animation:slowZoom 12s ease-in-out infinite alternate;
 }
-.hero-collage-item:nth-child(1){grid-column:1;grid-row:1;}
 .hero-collage-item:nth-child(2){display:none;}
 .hero-collage-item:nth-child(3){display:none;}
-@keyframes slowZoom{
-  from{transform:scale(1);}
-  to{transform:scale(1.06);}
-}
+@keyframes slowZoom{from{transform:scale(1);}to{transform:scale(1.06);}}
 
 .divider{
   width:100%;height:1px;
@@ -221,7 +188,6 @@ nav{
   opacity:0.3;
 }
 
-/* GALLERY HEADER */
 .gallery-header{padding:80px 52px 0;}
 .filter-row{
   display:flex;align-items:center;
@@ -248,7 +214,6 @@ nav{
   letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);
 }
 
-/* MASONRY */
 .masonry-grid{padding:48px 52px 100px;columns:3;column-gap:6px;}
 @media(max-width:900px){.masonry-grid{columns:2;}}
 @media(max-width:560px){.masonry-grid{columns:1;}}
@@ -288,7 +253,6 @@ nav{
   padding:4px 10px;
 }
 
-/* LIGHTBOX */
 .lightbox{
   position:fixed;inset:0;
   background:rgba(8,6,4,0.97);
@@ -332,7 +296,6 @@ nav{
 .lightbox-prev{left:-60px;}
 .lightbox-next{right:-60px;}
 
-/* ABOUT */
 .about-section{
   padding:100px 52px;
   display:grid;grid-template-columns:1fr 1fr;gap:80px;
@@ -359,11 +322,7 @@ nav{
   pointer-events:none;z-index:-1;
 }
 
-/* PRINTS & ASSIGNMENTS */
-.services-section{
-  padding:100px 52px;
-  border-top:1px solid #1a1612;
-}
+.services-section{padding:100px 52px;border-top:1px solid #1a1612;}
 .services-section .label{
   font-family:monospace;font-size:0.6rem;
   letter-spacing:0.35em;text-transform:uppercase;
@@ -385,42 +344,23 @@ nav{
 @media(max-width:900px){.services-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:560px){.services-grid{grid-template-columns:1fr;}}
 .service-card{
-  background:var(--bg2);
-  padding:40px 36px;
-  border:1px solid #1e1a16;
-  transition:border-color .3s;
+  background:var(--bg2);padding:40px 36px;
+  border:1px solid #1e1a16;transition:border-color .3s;
 }
 .service-card:hover{border-color:var(--accent2);}
-.service-icon{
-  font-size:1.4rem;margin-bottom:20px;
-  filter:grayscale(1) brightness(1.5);
-}
+.service-icon{font-size:1.4rem;margin-bottom:20px;filter:grayscale(1) brightness(1.5);}
 .service-card h3{
   font-family:'GFS Didot',serif;font-style:italic;
-  font-size:1.3rem;font-weight:400;
-  color:var(--fg);margin-bottom:12px;
+  font-size:1.3rem;font-weight:400;color:var(--fg);margin-bottom:12px;
 }
-.service-card p{
-  font-size:0.88rem;color:var(--muted);line-height:1.8;
-  margin-bottom:24px;
-}
-.service-price{
-  font-family:monospace;font-size:0.6rem;
-  letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--accent);
-}
+.service-card p{font-size:0.88rem;color:var(--muted);line-height:1.8;margin-bottom:24px;}
 
-/* CONTACT FORM */
-.contact-form-section{
-  max-width:680px;
-}
+.contact-form-section{max-width:680px;}
 .contact-form-section h3{
   font-family:'GFS Didot',serif;font-style:italic;
   font-size:1.8rem;font-weight:400;margin-bottom:8px;
 }
-.contact-form-section .sub{
-  color:var(--muted);font-size:0.88rem;margin-bottom:40px;
-}
+.contact-form-section .sub{color:var(--muted);font-size:0.88rem;margin-bottom:40px;}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
 @media(max-width:600px){.form-row{grid-template-columns:1fr;}}
 .form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
@@ -431,34 +371,21 @@ nav{
 .form-group input,
 .form-group select,
 .form-group textarea{
-  background:#111;
-  border:1px solid #2a2520;
-  color:var(--fg);
-  font-family:'EB Garamond',serif;font-size:0.95rem;
-  padding:12px 16px;
-  outline:none;
-  transition:border-color .2s;
-  width:100%;
-  cursor:text;
-  -webkit-appearance:none;
+  background:#111;border:1px solid #2a2520;
+  color:var(--fg);font-family:'EB Garamond',serif;font-size:0.95rem;
+  padding:12px 16px;outline:none;transition:border-color .2s;
+  width:100%;cursor:text;-webkit-appearance:none;
 }
 .form-group select{cursor:none;}
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus{border-color:var(--accent2);}
 .form-group textarea{resize:vertical;min-height:120px;}
-.form-submit{
-  margin-top:8px;
-  display:flex;align-items:center;gap:20px;flex-wrap:wrap;
-}
-.form-note{
-  font-size:0.78rem;color:var(--muted);font-style:italic;
-}
+.form-submit{margin-top:8px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.form-note{font-size:0.78rem;color:var(--muted);font-style:italic;}
 
-/* GENERAL CONTACT */
 .contact-section{
-  padding:80px 52px 100px;
-  border-top:1px solid #1a1612;
+  padding:80px 52px 100px;border-top:1px solid #1a1612;
   display:flex;align-items:center;justify-content:space-between;
   flex-wrap:wrap;gap:40px;
 }
@@ -479,7 +406,6 @@ nav{
 }
 .contact-email:hover{color:var(--accent);}
 
-/* FOOTER */
 footer{
   padding:32px 52px;border-top:1px solid #1a1612;
   display:flex;align-items:center;justify-content:space-between;
@@ -509,7 +435,6 @@ footer{
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- NAV -->
 <nav>
   <ul class="nav-links">
     <li><a href="#work">Work</a></li>
@@ -519,7 +444,6 @@ footer{
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
     <p class="hero-eyebrow">Photography</p>
@@ -537,7 +461,6 @@ footer{
 
 <div class="divider"></div>
 
-<!-- GALLERY -->
 <div class="gallery-header" id="work">
   <p class="gallery-section-title">The Work</p>
   <p class="gallery-count" id="photoCount"></p>
@@ -547,12 +470,10 @@ footer{
 
 <div class="divider"></div>
 
-<!-- PRINTS & ASSIGNMENTS -->
 <section class="services-section" id="prints">
   <p class="label">Prints & Assignments</p>
   <h2>Own a piece of the passing world</h2>
   <p class="intro">Every image in this collection is available as a limited fine art print. I also take on assignment work — documentary, portrait, editorial. If something moved you, let's talk.</p>
-
   <div class="services-grid">
     <div class="service-card">
       <div class="service-icon">◻</div>
@@ -575,7 +496,6 @@ footer{
       <p>Honest, unobtrusive coverage of the moments that matter. No stiff poses, no artificial setups. Just the day as it actually happened, kept forever.</p>
     </div>
   </div>
-
   <div class="contact-form-section">
     <h3>Make an enquiry</h3>
     <p class="sub">Tell me what you're looking for — I'll get back to you within 48 hours.</p>
@@ -615,7 +535,6 @@ footer{
 
 <div class="divider"></div>
 
-<!-- ABOUT -->
 <section class="about-section" id="about">
   <div class="about-text-block">
     <p class="label">About</p>
@@ -629,7 +548,6 @@ footer{
 
 <div class="divider"></div>
 
-<!-- GENERAL CONTACT -->
 <section class="contact-section" id="contact">
   <div class="contact-left">
     <p class="label">Get in touch</p>
@@ -639,13 +557,11 @@ footer{
   <a href="mailto:hello@vergaenglich.photography" class="btn">Write a message</a>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <span class="footer-logo">Vergänglich</span>
   <span class="footer-copy">© 2026 — All images protected. No reproduction without permission.</span>
 </footer>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <div class="lightbox-inner">
     <button class="lightbox-nav lightbox-prev" id="lbPrev">&#8592;</button>
@@ -666,46 +582,27 @@ footer{
 
 <script src="photos.js"></script>
 <script>
-// ── IMAGE PROTECTION ────────────────────────────────────────
-document.addEventListener('contextmenu', e => {
-  if (e.target.tagName === 'IMG') e.preventDefault();
-});
-document.addEventListener('dragstart', e => {
-  if (e.target.tagName === 'IMG') e.preventDefault();
-});
-// Block long-press on mobile
+document.addEventListener('contextmenu', e => { if (e.target.tagName === 'IMG') e.preventDefault(); });
+document.addEventListener('dragstart', e => { if (e.target.tagName === 'IMG') e.preventDefault(); });
 document.addEventListener('touchstart', e => {}, { passive: true });
 let touchTimer;
-document.addEventListener('touchstart', e => {
-  if (e.target.tagName === 'IMG') {
-    touchTimer = setTimeout(() => e.preventDefault(), 500);
-  }
-});
+document.addEventListener('touchstart', e => { if (e.target.tagName === 'IMG') { touchTimer = setTimeout(() => e.preventDefault(), 500); } });
 document.addEventListener('touchend', () => clearTimeout(touchTimer));
-// Block keyboard shortcuts for saving
-document.addEventListener('keydown', e => {
-  if ((e.ctrlKey || e.metaKey) && ['s','S'].includes(e.key)) e.preventDefault();
-});
-// ── END IMAGE PROTECTION ────────────────────────────────────
+document.addEventListener('keydown', e => { if ((e.ctrlKey || e.metaKey) && ['s','S'].includes(e.key)) e.preventDefault(); });
 
 const CATS = ['all','street','architecture','portrait','landscape','documentary','abstract'];
-const CAT_LABELS = {
-  all:'All work', street:'Street', architecture:'Architecture',
-  portrait:'Portrait', landscape:'Landscape', documentary:'Documentary', abstract:'Abstract'
-};
+const CAT_LABELS = { all:'All work', street:'Street', architecture:'Architecture', portrait:'Portrait', landscape:'Landscape', documentary:'Documentary', abstract:'Abstract' };
 
 let currentFilter = 'all';
 let lightboxIndex = 0;
 let filteredPhotos = [...PHOTOS];
 
-// CURSOR
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
 let mx = 0, my = 0, rx = 0, ry = 0;
 document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
 (function animCursor() {
-  rx += (mx - rx) * 0.18;
-  ry += (my - ry) * 0.18;
+  rx += (mx - rx) * 0.18; ry += (my - ry) * 0.18;
   cursor.style.transform = `translate(${mx - 4}px,${my - 4}px)`;
   ring.style.transform = `translate(${rx - 16}px,${ry - 16}px)`;
   requestAnimationFrame(animCursor);
@@ -715,35 +612,27 @@ document.querySelectorAll('a,button,.photo-item,.filter-btn').forEach(el => {
   el.addEventListener('mouseleave', () => ring.classList.remove('expanded'));
 });
 
-// HERO COLLAGE
-const heroPhotos = [
-  { src: 'photos/DSC03338.jpeg', title: 'fernsehturm' },
-].filter(Boolean);
-
+const heroPhotos = [{ src: 'photos/DSC03338.jpeg', title: 'fernsehturm' }];
 const collage = document.getElementById('heroCollage');
 heroPhotos.forEach(p => {
   const div = document.createElement('div');
   div.className = 'hero-collage-item';
   const img = document.createElement('img');
   img.src = p.src; img.alt = p.title;
-  div.appendChild(img);
-  collage.appendChild(div);
+  div.appendChild(img); collage.appendChild(div);
 });
 
-// ABOUT IMAGE
 const aboutPhoto = { src: 'photos/DSCF7349.jpg', title: 'self portrait' };
 const aboutSection = document.getElementById('aboutImage');
 const aImg = document.createElement('img');
 aImg.src = aboutPhoto.src; aImg.alt = aboutPhoto.title;
 aboutSection.appendChild(aImg);
 
-// FILTERS
 const filterRow = document.getElementById('filterRow');
 CATS.forEach(cat => {
   const btn = document.createElement('button');
   btn.className = 'filter-btn' + (cat === 'all' ? ' active' : '');
   btn.textContent = CAT_LABELS[cat];
-  btn.dataset.cat = cat;
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
@@ -753,13 +642,11 @@ CATS.forEach(cat => {
   filterRow.appendChild(btn);
 });
 
-// GALLERY
 function renderGallery() {
   const gallery = document.getElementById('gallery');
   gallery.innerHTML = '';
   filteredPhotos = currentFilter === 'all' ? PHOTOS : PHOTOS.filter(p => p.category === currentFilter);
   document.getElementById('photoCount').textContent = `— ${filteredPhotos.length} photograph${filteredPhotos.length !== 1 ? 's' : ''}`;
-
   filteredPhotos.forEach((p, i) => {
     const item = document.createElement('div');
     item.className = 'photo-item';
@@ -781,16 +668,10 @@ function renderGallery() {
   });
 }
 
-// LIGHTBOX
 const lb = document.getElementById('lightbox');
 const lbImg = document.getElementById('lbImg');
 
-function openLightbox(i) {
-  lightboxIndex = i;
-  updateLightbox();
-  lb.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
+function openLightbox(i) { lightboxIndex = i; updateLightbox(); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
 function updateLightbox() {
   const p = filteredPhotos[lightboxIndex];
   lbImg.src = p.src;
@@ -798,19 +679,10 @@ function updateLightbox() {
   document.getElementById('lbCaption').textContent = p.caption;
   document.getElementById('lbCity').textContent = p.city;
 }
-function closeLightbox() {
-  lb.classList.remove('open');
-  document.body.style.overflow = '';
-}
+function closeLightbox() { lb.classList.remove('open'); document.body.style.overflow = ''; }
 document.getElementById('lbClose').addEventListener('click', closeLightbox);
-document.getElementById('lbPrev').addEventListener('click', () => {
-  lightboxIndex = (lightboxIndex - 1 + filteredPhotos.length) % filteredPhotos.length;
-  updateLightbox();
-});
-document.getElementById('lbNext').addEventListener('click', () => {
-  lightboxIndex = (lightboxIndex + 1) % filteredPhotos.length;
-  updateLightbox();
-});
+document.getElementById('lbPrev').addEventListener('click', () => { lightboxIndex = (lightboxIndex - 1 + filteredPhotos.length) % filteredPhotos.length; updateLightbox(); });
+document.getElementById('lbNext').addEventListener('click', () => { lightboxIndex = (lightboxIndex + 1) % filteredPhotos.length; updateLightbox(); });
 lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
 document.addEventListener('keydown', e => {
   if (!lb.classList.contains('open')) return;
