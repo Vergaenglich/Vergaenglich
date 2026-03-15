@@ -138,16 +138,20 @@ nav{
 /* HERO */
 .hero{
   min-height:100vh;
-  display:grid;grid-template-columns:1fr 1.2fr;
+  display:grid;grid-template-columns:58% 42%;
   position:relative;overflow:hidden;
 }
 .hero-left{
   display:flex;flex-direction:column;justify-content:flex-end;
-  padding:0 40px 90px 52px;
+  padding:160px 60px 90px 100px;
   position:relative;z-index:2;
-  background:linear-gradient(to right, rgba(15,13,11,0.95) 55%, transparent 100%);
-  padding-top:160px;
-  max-width:55%;
+  background:linear-gradient(to right, rgba(15,13,11,0.97) 50%, rgba(15,13,11,0.6) 75%, transparent 100%);
+  width:58%;
+}
+.hero-desc{
+  margin-top:32px;font-size:1.15rem;color:rgba(232,226,217,0.7);
+  max-width:480px;line-height:1.9;
+  opacity:0;animation:fadeUp .9s .85s forwards;
 }
 .hero-left{
   display:flex;flex-direction:column;justify-content:flex-end;
@@ -575,7 +579,7 @@ footer{
   <div class="contact-form-section">
     <h3>Make an enquiry</h3>
     <p class="sub">Tell me what you're looking for — I'll get back to you within 48 hours.</p>
-    <form id="enquiryForm" action="mailto:sandrolosapio345@gmail.com" method="POST" enctype="text/plain">
+    <form id="enquiryForm" action="mailto:hello@vergaenglich.photography" method="POST" enctype="text/plain">
       <div class="form-row">
         <div class="form-group">
           <label for="fname">First name</label>
@@ -616,9 +620,9 @@ footer{
   <div class="about-text-block">
     <p class="label">About</p>
     <h2>Photography as an act of <em>noticing</em></h2>
-    <p>This work is an appreciation for humanity: for the value of time, for the weight of a single moment that we need to honour. Life is valuable. </p>
-    <p>Shot across Berlin, Chicago, Cuba, Belgium and from airplanes Black and white, colour, grain and stillness. Every image is an argument against forgetting.</p>
-    <p>The camera is a Fujifilm The eye is human. The imperfections are intentional.</p>
+    <p>This work is an appreciation for humanity — for the value of time, for the weight of a single moment that nobody paused to honour.</p>
+    <p>Shot across Berlin, Chicago, Havana, Paris and the Alps. Black and white, colour, grain and stillness. Every image is an argument against forgetting.</p>
+    <p>The camera is a Leica. The eye is human. The imperfections are intentional.</p>
   </div>
   <div class="about-image" id="aboutImage"></div>
 </section>
@@ -630,9 +634,9 @@ footer{
   <div class="contact-left">
     <p class="label">Get in touch</p>
     <h2>Let's make something together</h2>
-    <a href="mailto:sandrolosapio345@gmail.com" class="contact-email">sandrolosapio345@gmail.com</a>
+    <a href="mailto:hello@vergaenglich.photography" class="contact-email">hello@vergaenglich.photography</a>
   </div>
-  <a href="mailto:sandrolosapio345@gmail.com" class="btn">Write a message</a>
+  <a href="mailto:hello@vergaenglich.photography" class="btn">Write a message</a>
 </section>
 
 <!-- FOOTER -->
