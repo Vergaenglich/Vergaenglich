@@ -59,7 +59,7 @@ const PHOTOS = [
   { src: 'photos/DSC05319.jpg',   title: 'sparklers',            caption: 'light held against the dark.',          category: 'documentary', city: 'Berlin'   },
   { src: 'photos/DSCF2330.jpg',   title: 'snowfall',             caption: 'every flake its own direction.',        category: 'abstract',    city: 'Berlin'   },
   { src: 'photos/DSCF1500.jpg',   title: 'foggy park',           caption: 'the fog doesn\'t ask permission.',      category: 'landscape',   city: 'Berlin'   },
-  { src: 'photos/DSCF9995.jpg',   title: 'highland',             caption: 'they don\'t know about the city.',      category: 'landscape',   city: 'Scotland' },
+  { src: 'photos/DSCF9995.jpg',   title: 'highland',             caption: 'they don\'t know about the city.',      category: 'landscape',   city: 'belgium' },
   { src: 'photos/DSCF8617.jpg',   title: 'havana wall',          caption: 'held together with paint and will.',    category: 'street',      city: 'Havana'   },
   { src: 'photos/DSC03989.jpg',   title: 'venice',               caption: 'the city floats. so do we.',            category: 'street',      city: 'Venice'   },
   { src: 'photos/A3B1ABB7.jpg',   title: 'midnight berlin',      caption: 'midnight errands. nobody asks why.',    category: 'street',      city: 'Berlin'   },
@@ -67,5 +67,7 @@ const PHOTOS = [
   { src: 'photos/DSCF2086.jpg',   title: 'always there',         caption: 'always in the background.',             category: 'street',      city: 'Berlin'   },
   { src: 'photos/DSC01755.jpg',   title: 'the kids know',        caption: 'the kids already know.',                category: 'documentary', city: 'Berlin'   },
   { src: 'photos/DSCF4066.jpg',   title: 'lisbon street',        caption: 'another century, same street.',         category: 'street',      city: 'Lisbon'   },
+  { src: 'photos/idea of self.jpg',title: 'self perception',     caption: 'know who you are',                      category: 'street',      city: 'Berlin',  highlight: true },
 
+  
 ];
