@@ -712,7 +712,7 @@ document.querySelectorAll('a,button,.photo-item,.filter-btn').forEach(el => {
 
 // HERO COLLAGE
 const heroPhotos = [
-  PHOTOS.find(p => p.title === 'fernsehturm'),
+  { src: 'photos/DSC03338.jpeg', title: 'fernsehturm' },
 ].filter(Boolean);
 
 const collage = document.getElementById('heroCollage');
@@ -726,7 +726,7 @@ heroPhotos.forEach(p => {
 });
 
 // ABOUT IMAGE
-const aboutPhoto = PHOTOS.find(p => p.title === 'self portrait') || PHOTOS[0];
+const aboutPhoto = { src: 'photos/DSCF7349.jpg', title: 'self portrait' };
 const aboutSection = document.getElementById('aboutImage');
 const aImg = document.createElement('img');
 aImg.src = aboutPhoto.src; aImg.alt = aboutPhoto.title;
