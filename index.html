@@ -103,19 +103,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .gallery-section-title{font-family:'GFS Didot',serif;font-style:italic;font-size:clamp(2rem,4vw,3.5rem);font-weight:400;color:var(--fg);margin-bottom:8px;}
 .gallery-count{font-family:monospace;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);}
 
-.masonry-grid{padding:48px 52px 100px;columns:3;column-gap:6px;}
-@media(max-width:900px){.masonry-grid{columns:2;}}
-@media(max-width:560px){.masonry-grid{columns:1;}}
+.masonry-grid{padding:60px 80px 120px;columns:2;column-gap:40px;}
+@media(max-width:900px){.masonry-grid{columns:1;padding:40px 40px 80px;}}
+@media(max-width:560px){.masonry-grid{columns:1;padding:24px 24px 60px;}}
 
-.photo-item{break-inside:avoid;margin-bottom:6px;overflow:hidden;display:block;cursor:none;}
-.photo-item img{width:100%;display:block;transition:transform .7s cubic-bezier(0.25,1,0.5,1),filter .4s;filter:contrast(1.05) brightness(0.95);}
-.photo-item:hover img{transform:scale(1.03);filter:contrast(1.08) brightness(1);}
-.photo-overlay{position:absolute;inset:0;z-index:3;background:linear-gradient(to top,rgba(15,13,11,0.88) 0%,transparent 55%);opacity:0;transition:opacity .4s;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;}
+.photo-item{break-inside:avoid;margin-bottom:40px;overflow:hidden;display:block;cursor:none;}
+.photo-item img{width:100%;display:block;transition:transform .9s cubic-bezier(0.25,1,0.5,1),filter .5s;filter:contrast(1.03) brightness(0.97);}
+.photo-item:hover img{transform:scale(1.02);filter:contrast(1.06) brightness(1);}
+.photo-overlay{position:absolute;inset:0;z-index:3;background:linear-gradient(to top,rgba(15,13,11,0.82) 0%,transparent 50%);opacity:0;transition:opacity .5s;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;}
 .photo-item:hover .photo-overlay{opacity:1;}
-.photo-title{font-family:'GFS Didot',serif;font-style:italic;font-size:1rem;color:var(--fg);margin-bottom:4px;}
-.photo-caption{font-family:'EB Garamond',serif;font-size:0.78rem;color:rgba(232,226,217,0.65);font-style:italic;}
-.photo-city{font-family:monospace;font-size:0.55rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-top:6px;}
-.photo-highlight-badge{position:absolute;top:14px;left:14px;z-index:4;background:var(--accent);color:var(--bg);font-family:monospace;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;padding:4px 10px;}
+.photo-title{font-family:'GFS Didot',serif;font-style:italic;font-size:1.1rem;color:var(--fg);margin-bottom:5px;}
+.photo-caption{font-family:'EB Garamond',serif;font-size:0.85rem;color:rgba(232,226,217,0.7);font-style:italic;}
+.photo-city{font-family:monospace;font-size:0.55rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-top:8px;}
+.photo-highlight-badge{position:absolute;top:18px;left:18px;z-index:4;background:var(--accent);color:var(--bg);font-family:monospace;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;padding:4px 10px;}
 
 .lightbox{position:fixed;inset:0;background:rgba(8,6,4,0.97);z-index:2000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
 .lightbox.open{opacity:1;pointer-events:all;}
@@ -402,17 +402,22 @@ CATS.forEach(cat => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     currentFilter = cat;
+    visibleCount = 6;
     renderGallery();
   });
   filterRow.appendChild(btn);
 });
+
+let visibleCount = 6;
 
 function renderGallery() {
   const gallery = document.getElementById('gallery');
   gallery.innerHTML = '';
   filteredPhotos = currentFilter === 'all' ? PHOTOS : PHOTOS.filter(p => p.category === currentFilter);
   document.getElementById('photoCount').textContent = `— ${filteredPhotos.length} photograph${filteredPhotos.length !== 1 ? 's' : ''}`;
-  filteredPhotos.forEach((p, i) => {
+
+  const toShow = filteredPhotos.slice(0, visibleCount);
+  toShow.forEach((p, i) => {
     const item = document.createElement('div');
     item.className = 'photo-item';
     const img = document.createElement('img');
@@ -431,6 +436,25 @@ function renderGallery() {
     item.addEventListener('click', () => openLightbox(i));
     gallery.appendChild(item);
   });
+
+  // Remove existing more button if present
+  const existing = document.getElementById('moreBtn');
+  if (existing) existing.remove();
+
+  // Add more button if there are more photos
+  if (visibleCount < filteredPhotos.length) {
+    const moreWrap = document.createElement('div');
+    moreWrap.id = 'moreBtn';
+    moreWrap.style.cssText = 'text-align:center;padding:20px 0 80px;column-span:all;grid-column:1/-1;';
+    const moreBtn = document.createElement('button');
+    moreBtn.textContent = 'View more';
+    moreBtn.style.cssText = 'background:none;border:1px solid var(--accent2);color:var(--fg);font-family:monospace;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;padding:14px 48px;cursor:none;transition:background .25s,border-color .25s,color .25s;';
+    moreBtn.addEventListener('mouseenter', () => { moreBtn.style.background='var(--accent)'; moreBtn.style.borderColor='var(--accent)'; moreBtn.style.color='var(--bg)'; ring.classList.add('expanded'); });
+    moreBtn.addEventListener('mouseleave', () => { moreBtn.style.background='none'; moreBtn.style.borderColor='var(--accent2)'; moreBtn.style.color='var(--fg)'; ring.classList.remove('expanded'); });
+    moreBtn.addEventListener('click', () => { visibleCount += 6; renderGallery(); });
+    moreWrap.appendChild(moreBtn);
+    gallery.after(moreWrap);
+  }
 }
 
 const lb = document.getElementById('lightbox');
