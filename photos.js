@@ -15,7 +15,6 @@
 // ============================================================
 
 const PHOTOS = [
-
   // --- STREET ---
   { src: 'photos/DSC03338.jpeg',     title: 'fernsehturm',         caption: 'graffiti, gold light, going somewhere.',        category: 'street',       city: 'Berlin',    highlight: true  },
   { src: 'photos/DSC03638.jpeg',     title: 'wilting',             caption: 'even beauty forgets to leave.',                 category: 'street',       city: 'Berlin',    highlight: true  },
@@ -40,12 +39,18 @@ const PHOTOS = [
   { src: 'photos/DSCF2316.jpg',   title: 'let go',               caption: 'let go a little.',                      category: 'street',      city: 'Berlin'   },
   { src: 'photos/DSCF2086.jpg',   title: 'always there',         caption: 'always in the background.',             category: 'street',      city: 'Berlin'   },
   { src: 'photos/Idea_of_self.jpg',  title: 'idea of self',         caption: 'the shadow knows what it wants to be.',         category: 'street',      city: 'Berlin',  highlight: true },
+  { src: 'photos/DSCF8396.jpg', title: 'havana corner', caption: 'time moves differently here.', category: 'street', city: 'Havana' },
+  { src: 'photos/DSCF6649.jpg', title: 'video', caption: 'always watching. never seeing.', category: 'street', city: 'Berlin' },
+  { src: 'photos/DSCF6748.jpg', title: 'malecon', caption: 'the sun does not ask permission either.', category: 'street', city: 'Havana' },
+  { src: 'photos/DSCF7278.jpg', title: 'impala', caption: 'every street a different century.', category: 'street', city: 'Cuba' },
+  { src: 'photos/DSCF1566.jpg', title: 'new year', caption: 'the sky opened and nobody looked up.', category: 'abstract', city: 'Berlin' },
 
   // --- PORTRAIT ---
   { src: 'photos/B91F21CB_62D1_47CB_9CF7_BC046A755A7E_1309_0000001165CD1BD0.jpg', title: 'the gaze', caption: 'she holds more than she shows.', category: 'portrait', city: 'Berlin' },
   { src: 'photos/DSCF1002.jpg',      title: 'with sunflower',      caption: 'bloom and face. both in full light.',            category: 'portrait',     city: 'Berlin',    highlight: true  },
   { src: 'photos/DSCF1107.jpg',      title: 'vogue',               caption: 'rush and success. caught in one frame.',         category: 'portrait',     city: 'Berlin',    highlight: true  },
   { src: 'photos/DSCF7349.jpg',      title: 'self portrait',       caption: 'the one behind the lens.',                      category: 'portrait',     city: 'Cuba'     },
+  { src: 'photos/DSCF6947.jpg',      title: 'varadero',            caption: 'she held the wind for a moment.',               category: 'portrait', city: 'Varadero' },
 
   // --- DOCUMENTARY ---
   { src: 'photos/DSC01748.jpeg',     title: 'teach peace',         caption: 'the handwriting of the hopeful.',               category: 'documentary',  city: 'Berlin'   },
@@ -58,11 +63,13 @@ const PHOTOS = [
   { src: 'photos/DSC08180.jpeg',     title: 'dolomites',           caption: 'the mountain holds its breath.',                category: 'landscape',    city: 'Dolomites' },
   { src: 'photos/DSCF1500.jpg',   title: 'foggy park',           caption: `the fog does not ask permission.`,      category: 'landscape',   city: 'Berlin'   },
   { src: 'photos/DSCF9995.jpg',   title: 'highland',             caption: `they know nothing of the city.`,        category: 'landscape',   city: 'Scotland' },
+  { src: 'photos/DSCF9051.jpg', title: 'malecon ii', caption: 'a city driving into the light.', category: 'landscape', city: 'Havana' },
+  { src: 'photos/DSCF3297.jpg', title: 'waiting', caption: 'they have been here longer than us.', category: 'landscape', city: 'Aruba' },
 
   // --- ABSTRACT ---
   { src: 'photos/B83C4E79_8B2A_4DFE_B220_C5F45AAD15A5_46447_000004874707C767.jpeg', title: 'sky from below', caption: 'geometry of ambition.', category: 'abstract', city: 'Chicago' },
   { src: 'photos/DSCF3456.jpg',      title: 'pigeon',              caption: 'small life. heavy iron.',                       category: 'abstract',     city: 'Berlin'   },
   { src: 'photos/DSCF2383.jpg',   title: 'one moment',           caption: 'one moment before it melts.',           category: 'abstract',    city: 'Berlin'   },
   { src: 'photos/DSCF2330.jpg',   title: 'snowfall',             caption: 'every flake its own direction.',        category: 'abstract',    city: 'Berlin'   },
-
+ 
 ];
