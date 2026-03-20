@@ -44,9 +44,9 @@ const PHOTOS = [
   { src: 'photos/DSCF6748.jpg', title: 'malecon', caption: 'the sun does not ask permission either', category: 'street', city: 'Havana' },
   { src: 'photos/DSCF7278.jpg', title: 'impala', caption: 'every street a different century', category: 'street', city: 'Cuba' },
   { src: 'photos/DSCF1566.jpg', title: 'open view', caption: 'always be surprised', category: 'abstract', city: 'Berlin' },
-  { src: 'photos/DSCF3482.jpeg', title: 'chicago river', caption: 'the city fits through any gap you give it. thanks bird', category: 'street', city: 'Chicago' },
-  { src: 'photos/DSCF3760.jpeg', title: 'still standing', caption: 'glory and decay. same address', category: 'street', city: 'Berlin' },
-  { src: 'photos/DSCF3773.jpeg', title: 'friedrichstrasse', caption: 'everyone climbing to somewhere else', category: 'street', city: 'Berlin' },
+  { src: 'photos/DSCF3482.JPG', title: 'chicago river', caption: 'the city fits through any gap you give it. thanks bird', category: 'street', city: 'Chicago' },
+  { src: 'photos/DSCF3760.JPG', title: 'still standing', caption: 'glory and decay. same address', category: 'street', city: 'Berlin' },
+  { src: 'photos/DSCF3773.JPG', title: 'friedrichstrasse', caption: 'everyone climbing to somewhere else', category: 'street', city: 'Berlin' },
   
   // --- PORTRAIT ---
   { src: 'photos/B91F21CB_62D1_47CB_9CF7_BC046A755A7E_1309_0000001165CD1BD0.jpg', title: 'the gaze', caption: 'powerful. carefull. and not to be messed with', category: 'portrait', city: 'Berlin' },
@@ -61,7 +61,7 @@ const PHOTOS = [
   { src: 'photos/DSC05515.jpg',   title: 'lit up',     caption: 'you should shed light around yourself',             category: 'documentary', city: 'Berlin'   },
   { src: 'photos/DSC05319.jpg',   title: 'venice',            caption: 'pusing water and lighting cigarettes',          category: 'documentary', city: 'Berlin'   },
   { src: 'photos/DSC01755.jpg',   title: 'the kids know',        caption: 'the kids already know. its fun',                category: 'documentary', city: 'Berlin'   },
-  { src: 'photos/DSCF3746.jpeg',  title: 'one direction', caption: 'one direction is enough', category: 'documentary', city: 'Berlin' },
+  { src: 'photos/DSCF3746.JPG',  title: 'one direction', caption: 'one direction is enough', category: 'documentary', city: 'Berlin' },
 
   // --- LANDSCAPE ---
   { src: 'photos/DSC08180.jpeg',  title: 'dolomites',           caption: 'the mountain holding its breath',                category: 'landscape',    city: 'Dolomites' },
