@@ -432,8 +432,11 @@ function renderGallery() {
     overlay.innerHTML = `<div class="photo-title">${p.title}</div><div class="photo-caption">${p.caption}</div><div class="photo-city">${p.city}</div>`;
     item.appendChild(img);
     item.appendChild(overlay);
-    item.addEventListener('click', () => openLightbox(i));
-    gallery.appendChild(item);
+  item.addEventListener('click', () => openLightbox(i));
+item.style.opacity = '0';
+item.style.transition = 'opacity 0.6s ease';
+gallery.appendChild(item);
+setTimeout(() => { item.style.opacity = '1'; }, 50 + (i % 6) * 80);
   });
 
   // Remove existing more button if present
