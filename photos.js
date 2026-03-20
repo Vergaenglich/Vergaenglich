@@ -19,7 +19,7 @@ const PHOTOS = [
   { src: 'photos/DSC03338.jpeg',     title: 'blaue stunden',         caption: 'perspective from any position changes everything',        category: 'street',       city: 'Berlin',    highlight: true  },
   { src: 'photos/DSC03638.jpeg',     title: 'help',             caption: 'everyone is going to trouble. aftraid to pull the brake',                 category: 'street',       city: 'Berlin',    highlight: true  },
   { src: 'photos/DSC03187.jpeg',     title: 'oberbaumbrücke',      caption: 'the orange perfection of berlin',                           category: 'street',       city: 'Berlin',    highlight: true  },
-  { src: 'photos/IMG_7148.jpeg',     title: 'controller',          caption: 'sure man go ahead',                 category: 'street',       city: 'Chicago',   highlight: true  },
+  { src: 'photos/DSCF3592.jpg',     title: 'controller',          caption: 'sure man go ahead',                 category: 'street',       city: 'Chicago',   highlight: true  },
   { src: 'photos/DSCF3598.jpeg',     title: 'crosswalk',           caption: 'steel above. rain below. strangers passing',   category: 'street',       city: 'Chicago'  },
   { src: 'photos/DSCF3609.jpeg',     title: 'perfect imperfection',       caption: 'not straight not crooked. passed perfectly',                  category: 'street',       city: 'Chicago'  },
   { src: 'photos/DSC02616_2.jpeg',   title: 'leaning',       caption: "someonething so simple so perfect",              category: 'street',       city: 'Paris'    },
