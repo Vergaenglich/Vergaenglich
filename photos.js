@@ -44,7 +44,10 @@ const PHOTOS = [
   { src: 'photos/DSCF6748.jpg', title: 'malecon', caption: 'the sun does not ask permission either', category: 'street', city: 'Havana' },
   { src: 'photos/DSCF7278.jpg', title: 'impala', caption: 'every street a different century', category: 'street', city: 'Cuba' },
   { src: 'photos/DSCF1566.jpg', title: 'open view', caption: 'always be surprised', category: 'abstract', city: 'Berlin' },
-
+  { src: 'photos/DSCF3482.jpeg', title: 'chicago river', caption: 'the city fits through any gap you give it. thanks bird', category: 'street', city: 'Chicago' },
+  { src: 'photos/DSCF3760.jpeg', title: 'still standing', caption: 'glory and decay. same address', category: 'street', city: 'Berlin' },
+  { src: 'photos/DSCF3773.jpeg', title: 'friedrichstrasse', caption: 'everyone climbing to somewhere else', category: 'street', city: 'Berlin' },
+  
   // --- PORTRAIT ---
   { src: 'photos/B91F21CB_62D1_47CB_9CF7_BC046A755A7E_1309_0000001165CD1BD0.jpg', title: 'the gaze', caption: 'powerful. carefull. and not to be messed with', category: 'portrait', city: 'Berlin' },
   { src: 'photos/DSCF1002.jpg',      title: 'breathe',      caption: 'take it all in',            category: 'portrait',     city: 'Berlin',    highlight: true  },
@@ -53,22 +56,23 @@ const PHOTOS = [
   { src: 'photos/DSCF6947.jpg',      title: 'varadero',            caption: 'she held the wind for a moment',               category: 'portrait', city: 'Varadero' },
 
   // --- DOCUMENTARY ---
-  { src: 'photos/DSC01748.jpeg',     title: 'teach peace',         caption: 'the handwriting of the hopeful',               category: 'documentary',  city: 'Berlin'   },
-  { src: 'photos/DSC08699.jpeg',     title: 'lean',                caption: 'gravity finds its own angle',                  category: 'documentary',  city: 'Track'    },
+  { src: 'photos/DSC01748.jpeg',  title: 'teach peace',         caption: 'the handwriting of the hopeful',               category: 'documentary',  city: 'Berlin'   },
+  { src: 'photos/DSC08699.jpeg',  title: 'lean',                caption: 'gravity finds its own angle',                  category: 'documentary',  city: 'Track'    },
   { src: 'photos/DSC05515.jpg',   title: 'lit up',     caption: 'you should shed light around yourself',             category: 'documentary', city: 'Berlin'   },
   { src: 'photos/DSC05319.jpg',   title: 'venice',            caption: 'pusing water and lighting cigarettes',          category: 'documentary', city: 'Berlin'   },
-   { src: 'photos/DSC01755.jpg',   title: 'the kids know',        caption: 'the kids already know. its fun',                category: 'documentary', city: 'Berlin'   },
+  { src: 'photos/DSC01755.jpg',   title: 'the kids know',        caption: 'the kids already know. its fun',                category: 'documentary', city: 'Berlin'   },
+  { src: 'photos/DSCF3746.jpeg',  title: 'one direction', caption: 'one direction is enough', category: 'documentary', city: 'Berlin' },
 
   // --- LANDSCAPE ---
-  { src: 'photos/DSC08180.jpeg',     title: 'dolomites',           caption: 'the mountain holding its breath',                category: 'landscape',    city: 'Dolomites' },
+  { src: 'photos/DSC08180.jpeg',  title: 'dolomites',           caption: 'the mountain holding its breath',                category: 'landscape',    city: 'Dolomites' },
   { src: 'photos/DSCF1500.jpg',   title: 'santa',           caption: `passing of december`,      category: 'landscape',   city: 'Berlin'   },
   { src: 'photos/DSCF9995.jpg',   title: 'highland',             caption: `thank you for the framing birds`,        category: 'landscape',   city: 'Scotland' },
-  { src: 'photos/DSCF9051.jpg', title: 'setting sun', caption: 'they just keep it going', category: 'landscape', city: 'Havana' },
-  { src: 'photos/DSCF3297.jpg', title: 'spiderman', caption: 'keep searching for spidey', category: 'landscape', city: 'Aruba' },
+  { src: 'photos/DSCF9051.jpg',   title: 'setting sun', caption: 'they just keep it going', category: 'landscape', city: 'Havana' },
+  { src: 'photos/DSCF3297.jpg',   title: 'spiderman', caption: 'keep searching for spidey', category: 'landscape', city: 'Aruba' },
 
   // --- ABSTRACT ---
   { src: 'photos/B83C4E79_8B2A_4DFE_B220_C5F45AAD15A5_46447_000004874707C767.jpeg', title: 'sky from below', caption: 'geometry of ambition and light', category: 'abstract', city: 'Chicago' },
-  { src: 'photos/DSCF3456.jpg',      title: 'pigeon',              caption: 'small life. heavy iron. open and closed.',                       category: 'abstract',     city: 'Berlin'   },
+  { src: 'photos/DSCF3456.jpg',   title: 'pigeon',              caption: 'small life. heavy iron. open and closed.',                       category: 'abstract',     city: 'Berlin'   },
   { src: 'photos/DSCF2383.jpg',   title: 'one moment',           caption: 'one moment before it melts',           category: 'abstract',    city: 'Berlin'   },
   { src: 'photos/DSCF2330.jpg',   title: 'snowfall',             caption: 'every flake its own direction',        category: 'abstract',    city: 'Berlin'   },
  
