@@ -39,7 +39,6 @@ const PHOTOS = [
   { src: 'photos/DSCF2316.jpg',   title: 'let go',               caption: 'let go a little more',                      category: 'street',      city: 'Berlin'   },
   { src: 'photos/DSCF2086.jpg',   title: 'touch of love',         caption: 'we all have a mission. do it',             category: 'street',      city: 'Berlin'   },
   { src: 'photos/Idea_of_self.jpg',  title: 'idea of self',         caption: 'the shadow knows what it wants to be',         category: 'street',      city: 'Berlin',  highlight: true },
-  { src: 'photos/DSCF8396.jpg', title: 'havana corner', caption: 'time moves differently here.', category: 'street', city: 'Havana' },
   { src: 'photos/DSCF6649.jpg', title: 'video', caption: 'always watching. never seeing', category: 'street', city: 'Berlin' },
   { src: 'photos/DSCF6748.jpg', title: 'malecon', caption: 'the sun does not ask permission either', category: 'street', city: 'Havana' },
   { src: 'photos/DSCF7278.jpg', title: 'impala', caption: 'every street a different century', category: 'street', city: 'Cuba' },
