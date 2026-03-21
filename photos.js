@@ -16,7 +16,6 @@
 
 const PHOTOS = [
   // --- STREET ---
-  { src: 'photos/DSC03338.jpeg',     title: 'blaue stunden',         caption: 'perspective from any position changes everything',        category: 'street',       city: 'Berlin',    highlight: true  },
   { src: 'photos/DSC03638.jpeg',     title: 'help',             caption: 'everyone is going to trouble. aftraid to pull the brake',                 category: 'street',       city: 'Berlin',    highlight: true  },
   { src: 'photos/DSC03187.jpeg',     title: 'oberbaumbrücke',      caption: 'the orange perfection of berlin',                           category: 'street',       city: 'Berlin',    highlight: true  },
   { src: 'photos/DSCF3592.jpg',     title: 'controller',          caption: 'sure man go ahead',                 category: 'street',       city: 'Chicago',   highlight: true  },
@@ -46,7 +45,8 @@ const PHOTOS = [
   { src: 'photos/DSCF3482.JPG', title: 'chicago river', caption: 'the city fits through any gap you give it. thanks bird', category: 'street', city: 'Chicago' },
   { src: 'photos/DSCF3760.JPG', title: 'still standing', caption: 'glory and decay. same address', category: 'street', city: 'Berlin' },
   { src: 'photos/DSCF3773.JPG', title: 'friedrichstrasse', caption: 'everyone climbing to somewhere else', category: 'street', city: 'Berlin' },
-  
+  { src: 'photos/DSC03338.jpeg',     title: 'blaue stunden',         caption: 'perspective from any position changes everything',        category: 'street',       city: 'Berlin',    highlight: true  },
+
   // --- PORTRAIT ---
   { src: 'photos/B91F21CB_62D1_47CB_9CF7_BC046A755A7E_1309_0000001165CD1BD0.jpg', title: 'the gaze', caption: 'powerful. carefull. and not to be messed with', category: 'portrait', city: 'Berlin' },
   { src: 'photos/DSCF1002.jpg',      title: 'breathe',      caption: 'take it all in',            category: 'portrait',     city: 'Berlin',    highlight: true  },
