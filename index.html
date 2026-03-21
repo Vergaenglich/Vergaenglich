@@ -356,8 +356,8 @@ document.addEventListener('touchstart', e => { if (e.target.tagName === 'IMG') {
 document.addEventListener('touchend', () => clearTimeout(touchTimer));
 document.addEventListener('keydown', e => { if ((e.ctrlKey || e.metaKey) && ['s','S'].includes(e.key)) e.preventDefault(); });
 
-const CATS = ['all','street','architecture','portrait','landscape','documentary','abstract'];
-const CAT_LABELS = { all:'All work', street:'Street', architecture:'Architecture', portrait:'Portrait', landscape:'Landscape', documentary:'Documentary', abstract:'Abstract' };
+const CATS = ['all','street','portrait','landscape','documentary','abstract'];
+const CAT_LABELS = { all:'All work', street:'Street', portrait:'Portrait', landscape:'Landscape', documentary:'Documentary', abstract:'Abstract' };
 
 let currentFilter = 'all';
 let lightboxIndex = 0;
