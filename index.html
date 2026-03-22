@@ -68,12 +68,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 /* HERO — wider text column, closer to image */
 .hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;}
 .hero-left{display:flex;flex-direction:column;justify-content:flex-end;padding:0px 0px 60px 72px;position:relative;z-index:2;background:none;width:60%;}
-.hero-right{position:fixed;top:0;left:0;width:100%;height:100vh;z-index:-1;}
+.hero-eyebrow{font-family:monospace;font-size:0.58rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;opacity:0;animation:fadeUp .8s .3s forwards;}
+.hero-title{font-family:'GFS Didot',serif;font-size:clamp(2.8rem,5.5vw,6rem);font-weight:400;line-height:1;letter-spacing:-0.01em;white-space:nowrap;opacity:0;animation:fadeUp .9s .5s forwards;}
+.hero-title em{font-style:italic;color:var(--accent);display:inline;}
+.hero-tagline{margin-top:14px;font-family:'EB Garamond',serif;font-style:italic;font-size:1rem;color:rgba(232,226,217,0.5);letter-spacing:0.04em;opacity:0;animation:fadeUp .9s .7s forwards;}
+.hero-desc{margin-top:20px;font-size:1.1rem;color:rgba(232,226,217,0.65);width:100%;line-height:1.75;opacity:0;animation:fadeUp .9s .85s forwards;}
+.hero-cta{margin-top:28px;opacity:0;animation:fadeUp .9s 1s forwards;}
+.hero-right{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;}
 .hero-right::after{content:'';position:absolute;inset:0;background:rgba(10,8,6,0.72);z-index:1;}
-.hero-collage{position:absolute;inset:0;width:100%;height:100%;}
-.hero-collage-item{position:absolute;inset:0;overflow:hidden;}
+.hero-collage{position:absolute;top:0;left:0;width:100%;height:100%;}
+.hero-collage-item{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;}
 .hero-collage-item img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:contrast(1.05) brightness(0.9);animation:slowZoom 12s ease-in-out infinite alternate;}
-@keyframes slowZoom{from{transform:scale(1);}to{transform:scale(1.06);}}
+.hero-collage-item:nth-child(2){display:none;}
+.hero-collage-item:nth-child(3){display:none;}
+  @keyframes slowZoom{from{transform:scale(1);}to{transform:scale(1.06);}}
 
 .divider{width:100%;height:1px;background:linear-gradient(to right,transparent,var(--accent2) 30%,var(--accent2) 70%,transparent);opacity:0.3;}
 
