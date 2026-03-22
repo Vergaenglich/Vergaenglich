@@ -116,6 +116,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .photo-caption{font-family:'EB Garamond',serif;font-size:0.85rem;color:rgba(232,226,217,0.7);font-style:italic;}
 .photo-city{font-family:monospace;font-size:0.55rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-top:8px;}
 .photo-highlight-badge{position:absolute;top:18px;left:18px;z-index:4;background:var(--accent);color:var(--bg);font-family:monospace;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;padding:4px 10px;}
+.print-btn{display:inline-block;margin-top:12px;padding:6px 16px;border:1px solid var(--accent2);color:var(--fg);font-family:monospace;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;cursor:none;text-decoration:none;}
 
 .lightbox{position:fixed;inset:0;background:rgba(8,6,4,0.97);z-index:2000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
 .lightbox.open{opacity:1;pointer-events:all;}
@@ -431,7 +432,7 @@ function renderGallery() {
     }
     const overlay = document.createElement('div');
     overlay.className = 'photo-overlay';
-    overlay.innerHTML = `<div class="photo-title">${p.title}</div><div class="photo-caption">${p.caption}</div><div class="photo-city">${p.city}</div>`;
+overlay.innerHTML = `<div class="photo-title">${p.title}</div><div class="photo-caption">${p.caption}</div><div class="photo-city">${p.city}</div><a class="print-btn" onclick="orderPrint('${p.title}');event.stopPropagation();">Order print</a>`; 
     item.appendChild(img);
     item.appendChild(overlay);
   item.addEventListener('click', () => openLightbox(i));
@@ -484,6 +485,18 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') { lightboxIndex = (lightboxIndex + 1) % filteredPhotos.length; updateLightbox(); }
 });
 
+  function orderPrint(title) {
+  document.getElementById('ftype').value = 'print';
+  document.getElementById('fmsg').value = 'I am interested in ordering a print of "' + title + '".';
+  document.getElementById('enquiryForm').scrollIntoView({ behavior: 'smooth' });
+}
+
+function orderService(type) {
+  document.getElementById('ftype').value = type;
+  document.getElementById('fmsg').value = '';
+  document.getElementById('enquiryForm').scrollIntoView({ behavior: 'smooth' });
+}
+  
 renderGallery();
 </script>
 </body>
