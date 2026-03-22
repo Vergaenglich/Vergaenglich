@@ -108,7 +108,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 @media(max-width:560px){.masonry-grid{columns:1;padding:24px 24px 60px;}}
 
 .photo-item{break-inside:avoid;margin-bottom:40px;overflow:hidden;display:block;cursor:none;}
-.photo-item img{width:100%;display:block;transition:transform .9s cubic-bezier(0.25,1,0.5,1),filter .5s;filter:contrast(1.03) brightness(0.97);}
+.photo-item img{width:100%;display:block;transition:transform .9s cubic-bezier(0.25,1,0.5,1),filter .5s,opacity .5s;filter:contrast(1.03) brightness(0.97);opacity:0;background:#1a1814;}
+.photo-item img.loaded{opacity:1;}
 .photo-item:hover img{transform:scale(1.02);filter:contrast(1.06) brightness(1);}
 .photo-overlay{position:absolute;inset:0;z-index:3;background:linear-gradient(to top,rgba(15,13,11,0.82) 0%,transparent 50%);opacity:0;transition:opacity .5s;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;}
 .photo-item:hover .photo-overlay{opacity:1;}
@@ -427,6 +428,7 @@ function renderGallery() {
     item.className = 'photo-item';
     const img = document.createElement('img');
     img.src = p.src; img.alt = p.title; img.loading = 'lazy';
+    img.onload = () => img.classList.add('loaded');
     if (p.highlight) {
       const badge = document.createElement('div');
       badge.className = 'photo-highlight-badge';
