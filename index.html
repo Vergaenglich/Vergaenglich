@@ -7,7 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
 :root{
   --bg:#f5f3ef;
   --bg2:#ece9e3;
@@ -16,15 +15,13 @@
   --accent:#1a1814;
   --accent2:#3a3530;
 }
-
 html{scroll-behavior:smooth}
-
 body{
   background:var(--bg);
   color:var(--fg);
   font-family:'EB Garamond',Georgia,serif;
   font-size:16px;
-  line-height:1.6;
+  line-height:1.7;
   overflow-x:hidden;
   cursor:none;
 }
@@ -56,22 +53,69 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .btn-outline{background:none;border:1px solid var(--accent2);cursor:none;}
 }
 
-/* HERO — wider text column, closer to image */
-.hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;}
-.hero-left{display:flex;flex-direction:column;justify-content:flex-end;padding:0px 0px 60px 72px;position:relative;z-index:2;background:none;width:60%;}
-.hero-eyebrow{font-family:monospace;font-size:0.58rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;opacity:0;animation:fadeUp .8s .3s forwards;}
-.hero-title{font-family:'GFS Didot',serif;font-size:clamp(2.8rem,5.5vw,6rem);font-weight:400;line-height:1;letter-spacing:-0.01em;white-space:nowrap;opacity:0;animation:fadeUp .9s .5s forwards;}
-.hero-title em{ color:var(--accent);display:inline;}
-.hero-tagline{margin-top:14px;font-family:'EB Garamond',serif; font-size:1rem;color:rgba(232,226,217,0.5);letter-spacing:0.04em;opacity:0;animation:fadeUp .9s .7s forwards;}
-.hero-desc{margin-top:20px;font-size:1.1rem;color:#1a1814;width:100%;line-height:1.75;opacity:0;animation:fadeUp .9s .85s forwards;}
-.hero-cta{margin-top:28px;opacity:0;animation:fadeUp .9s 1s forwards;}
-.hero-right{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;}
-.hero-right::after{content:'';position:absolute;inset:0;background:rgba(245,243,239,0.35);z-index:1;}
-.hero-collage{position:absolute;top:0;left:0;width:100%;height:100%;}
-.hero-collage-item{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;}
-.hero-collage-item img{width:100%;height:100%;object-fit:cover;object-position:center top;filter: grayscale(100%) contrast(1.05) brightness(0.9);animation:slowZoom 12s ease-in-out infinite alternate;}
-.hero-collage-item:nth-child(2){display:none;}
-.hero-collage-item:nth-child(3){display:none;}
+/* Improved Hero - Modern & Spacious */
+.hero{
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to right, rgba(26,24,20,0.65) 0%, rgba(26,24,20,0.3) 60%, transparent 100%);
+  z-index:1;
+  pointer-events:none;
+}
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center 40%;
+  filter: grayscale(100%) contrast(1.08) brightness(0.88);
+  z-index:0;
+}
+.hero-left{
+  position:relative;
+  z-index:2;
+  width:55%;
+  max-width:620px;
+  padding:0 0 80px 80px;
+}
+.hero-eyebrow{
+  font-family:monospace;
+  font-size:0.65rem;
+  letter-spacing:0.35em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:12px;
+}
+.hero-title{
+  font-family:'GFS Didot',serif;
+  font-size:clamp(3.2rem, 7vw, 7rem);
+  font-weight:400;
+  line-height:1.05;
+  letter-spacing:-0.02em;
+  color:#fff;
+}
+.hero-tagline{
+  margin-top:16px;
+  font-size:1.15rem;
+  color:rgba(255,255,255,0.85);
+  font-style:italic;
+}
+.hero-desc{
+  margin-top:28px;
+  font-size:1.1rem;
+  color:rgba(255,255,255,0.75);
+  max-width:520px;
+  line-height:1.75;
+}
+.hero-cta{
+  margin-top:40px;
+}
   @keyframes slowZoom{from{transform:scale(1);}to{transform:scale(1.06);}}
 
 .divider{width:100%;height:1px;background:linear-gradient(to right,transparent,var(--accent2) 30%,var(--accent2) 70%,transparent);opacity:0.3;}
@@ -83,7 +127,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .filter-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
 .gallery-section-title{font-family:'GFS Didot',serif; font-size:clamp(2rem,4vw,3.5rem);font-weight:400;color:var(--fg);margin-bottom:8px;}
 .gallery-count{font-family:monospace;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);}
-
 .masonry-grid{padding:40px 40px 80px;columns:3;column-gap:8px;}
 .photo-item{margin-bottom:8px;}
 @media(max-width:900px){.masonry-grid{columns:1;padding:40px 40px 80px;}}
@@ -95,7 +138,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .photo-item:hover img{transform:scale(1.02);filter:contrast(1.06) brightness(1);}
 .photo-overlay{position:absolute;inset:0;z-index:3;background:linear-gradient(to top,rgba(15,13,11,0.82) 0%,transparent 50%);opacity:0;transition:opacity .5s;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;}
 .photo-item:hover .photo-overlay{opacity:1;}
-.photo-title{font-family:'GFS Didot',serif; font-size:1.1rem;color:var(--fg);margin-bottom:5px;}
+.photo-title{font-family:'GFS Didot',serif; font-size:1.1rem;color:rgba(--fg);margin-bottom:5px;}
 .photo-caption{font-family:'EB Garamond',serif;font-size:0.85rem;color:rgba(232,226,217,0.7); }
 .photo-city{font-family:monospace;font-size:0.55rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-top:8px;}
 .photo-highlight-badge{position:absolute;top:18px;left:18px;z-index:4;background:var(--accent);color:var(--bg);font-family:monospace;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;padding:4px 10px;}
@@ -198,15 +241,23 @@ footer{padding:32px 52px;border-top:1px solid #1a1612;display:flex;align-items:c
 </nav>
 
 <section class="hero">
+  <!-- Background image - replace with one of your strongest B&W photos -->
+  <div class="hero-bg" style="background-image:url('photos/DSC03338.jpeg');"></div>
+
   <div class="hero-left">
     <p class="hero-eyebrow">Photography</p>
-<h1 class="hero-title"><span class="hero-title-plain">Verg</span><span class="hero-title-accent">änglich</span></h1>
+    <h1 class="hero-title">Vergänglich</h1>
     <p class="hero-tagline">every moment is worth remembering.</p>
-    <p class="hero-desc">Beauty is everywhere, if you slow down enough to notice it. In the decay and the rush, in the quiet street and the crowded square, in the remarkable face you pass without a second thought. We all move through the same world together. We just don't always stop or look at the same places. These photographs are about those moments in time of simple appreciation. If any of this resonates with you, I'd love to connect. Whether it's a project, a collaboration, or simply a photowalk through the city.</p>
+    <p class="hero-desc">
+      Beauty is everywhere, if you slow down enough to notice it. In the decay and the rush, in the quiet street and the crowded square. 
+      These photographs are about those moments in time of simple appreciation.
+    </p>
     <div class="hero-cta">
       <a href="#work" class="btn">View The Collection</a>
     </div>
   </div>
+
+  <!-- Optional: keep a subtle moving collage in background if you like, but it's now secondary -->
   <div class="hero-right">
     <div class="hero-collage" id="heroCollage"></div>
   </div>
