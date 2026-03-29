@@ -23,7 +23,6 @@ body{
   font-size:16px;
   line-height:1.7;
   overflow-x:hidden;
-  cursor:none;
 }
 
 body::before{
@@ -39,19 +38,18 @@ body::before{
 
 img{-webkit-user-drag:none;user-drag:none;-webkit-user-select:none;user-select:none;pointer-events:none;}
 .photo-item{position:relative;}
-.photo-item::after{content:'';position:absolute;inset:0;z-index:2;cursor:none;}
+.photo-item::after{content:'';position:absolute;inset:0;z-index:2; ;}
 .lightbox-img-wrap{position:relative;display:inline-block;}
 .lightbox-img-wrap::after{content:'';position:absolute;inset:0;z-index:2;}
 
 
-nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:flex-end;padding:24px 48px;background:linear-gradient(to bottom,rgba(15,13,11,0.95) 0%,rgba(15,13,11,0.4) 80%, transparent 100%);}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:flex-end;padding:24px 48px;background:linear-gradient(to bottom,rgba(245,243,239,0.95) 0%,rgba(245,243,239,0.4) 80%,transparent 100%);}
 .nav-links{display:flex;gap:32px;list-style:none;}
 .nav-links a{font-family:monospace;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);text-decoration:none;transition:color .2s;}
 .nav-links a:hover{color:var(--accent);}
-.btn{display:inline-block;padding:13px 32px;border:1px solid var(--accent2);color:var(--fg);text-decoration:none;font-family:monospace;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;transition:background .25s,border-color .25s,color .25s;}
+.btn{display:inline-block;padding:13px 32px;border:1px solid rgba(245,243,239,0.8);color:#f5f3ef;text-decoration:none;font-family:monospace;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;transition:background .25s,border-color .25s,color .25s;}
 .btn:hover{background:var(--accent);border-color:var(--accent);color:var(--bg);}
-.btn-outline{background:none;border:1px solid var(--accent2);cursor:none;}
-}
+.btn-outline{background:none;border:1px solid var(--accent2); ;}
 
 /* Improved Hero - Modern & Spacious */
 .hero {
@@ -136,7 +134,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 
 .gallery-header{padding:80px 52px 0;}
 .filter-row{display:flex;align-items:center;border-bottom:1px solid #1e1a16;overflow-x:auto;margin-top:16px;}
-.filter-btn{background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);font-family:monospace;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;padding:14px 20px;cursor:none;transition:color .2s,border-color .2s;white-space:nowrap;margin-bottom:-1px;}
+.filter-btn{background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);font-family:monospace;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;padding:14px 20px; ;transition:color .2s,border-color .2s;white-space:nowrap;margin-bottom:-1px;}
 .filter-btn:hover{color:var(--fg);}
 .filter-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
 .gallery-section-title{font-family:'GFS Didot',serif; font-size:clamp(2rem,4vw,3.5rem);font-weight:400;color:var(--fg);margin-bottom:8px;}
@@ -146,7 +144,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 @media(max-width:900px){.masonry-grid{columns:1;padding:40px 40px 80px;}}
 @media(max-width:560px){.masonry-grid{columns:1;padding:24px 24px 60px;}}
 
-.photo-item{break-inside:avoid;margin-bottom:40px;overflow:hidden;display:block;cursor:none;min-height:200px;}
+.photo-item{break-inside:avoid;margin-bottom:40px;overflow:hidden;display:block; ;min-height:200px;}
 .photo-item img{width:100%;display:block;transition:transform .9s cubic-bezier(0.25,1,0.5,1),filter .5s,opacity .5s;filter:contrast(1.03) brightness(0.97);opacity:0;background:#1a1814;}
 .photo-item img.loaded{opacity:1;}
 .photo-item:hover img{transform:scale(1.02);filter:contrast(1.06) brightness(1);}
@@ -156,7 +154,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .photo-caption{font-family:'EB Garamond',serif;font-size:0.85rem;color:rgba(232,226,217,0.7); }
 .photo-city{font-family:monospace;font-size:0.55rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-top:8px;}
 .photo-highlight-badge{position:absolute;top:18px;left:18px;z-index:4;background:var(--accent);color:var(--bg);font-family:monospace;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;padding:4px 10px;}
-.print-btn{display:inline-block;margin-top:12px;padding:6px 16px;border:1px solid var(--accent2);color:var(--fg);font-family:monospace;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;cursor:none;text-decoration:none;}
+.print-btn{display:inline-block;margin-top:12px;padding:6px 16px;border:1px solid var(--accent2);color:var(--fg);font-family:monospace;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase; ;text-decoration:none;}
 
 .lightbox{position:fixed;inset:0;background:rgba(8,6,4,0.97);z-index:2000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
 .lightbox.open{opacity:1;pointer-events:all;}
@@ -166,9 +164,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .lightbox-title{font-family:'GFS Didot',serif; font-size:1.1rem;color:var(--fg);}
 .lightbox-caption{font-family:'EB Garamond',serif;font-size:0.85rem;color:var(--muted); margin-top:2px;}
 .lightbox-city{font-family:monospace;font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);text-align:right;}
-.lightbox-close{position:absolute;top:-44px;right:0;background:none;border:none;color:var(--muted);font-family:monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;cursor:none;transition:color .2s;}
+.lightbox-close{position:absolute;top:-44px;right:0;background:none;border:none;color:var(--muted);font-family:monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase; ;transition:color .2s;}
 .lightbox-close:hover{color:var(--fg);}
-.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(232,226,217,0.25);font-size:1.8rem;cursor:none;transition:color .2s;padding:20px;}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(232,226,217,0.25);font-size:1.8rem; ;transition:color .2s;padding:20px;}
 .lightbox-nav:hover{color:var(--fg);}
 .lightbox-prev{left:-60px;}
 .lightbox-next{right:-60px;}
@@ -202,8 +200,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 @media(max-width:600px){.form-row{grid-template-columns:1fr;}}
 .form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
 .form-group label{font-family:monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);}
-.form-group input,.form-group select,.form-group textarea{background:#111;border:1px solid #2a2520;color:var(--fg);font-family:'EB Garamond',serif;font-size:0.95rem;padding:12px 16px;outline:none;transition:border-color .2s;width:100%;cursor:text;-webkit-appearance:none;}
-.form-group select{cursor:none;}
+.form-group input,.form-group select,.form-group textarea{background:#ece9e3;border:1px solid #c8c3bb;color:var(--fg);
+.form-group select{ ;}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--accent2);}
 .form-group textarea{resize:vertical;min-height:120px;}
 .form-submit{margin-top:8px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
@@ -351,7 +349,7 @@ footer{padding:32px 52px;border-top:1px solid #1a1612;display:flex;align-items:c
 <section class="about-section" id="about">
   <div class="about-text-block">
     <p class="label">About</p>
-    <h2>Photography as an act of <span>noticing and remembering</em></h2>
+   <h2>Photography as an act of noticing and remembering</h2>
     <p>This work is an appreciation for society, for the value of time, for the weight of a single moment that deserves to be admired. I'm an expath from Belgium living in Berlin with Italian roots. I try to capture things in the way they are.</p>
     <p>Vergänglich was the only honest name. The act of capturing something beautiful is inseparable from the awareness that it's already gone. Shot across Berlin, Chicago, Havana, Belgium, and Black and white, colour, grain and stillness. Every image is an argument against forgetting, and proof that joy is everywhere if you look.</p>
     <p>The camera is a Fujifilm Xpro-2, and the imperfections are intentional.</p>
@@ -410,24 +408,6 @@ const CAT_LABELS = { all:'All work', street:'Street', portrait:'Portrait', lands
 let currentFilter = 'all';
 let lightboxIndex = 0;
 let filteredPhotos = [...PHOTOS];
-
-document.querySelectorAll('a,button,.photo-item,.filter-btn').forEach(el => {
-  el.addEventListener('mouseenter', () => ring.classList.add('expanded'));
-  el.addEventListener('mouseleave', () => ring.classList.remove('expanded'));
-});
-
-const heroPhotos = [{ src: 'photos/DSC03338.jpeg', title: 'fernsehturm' }];
-const collage = document.getElementById('heroCollage');
-collage.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;';
-heroPhotos.forEach(p => {
-  const div = document.createElement('div');
-  div.className = 'hero-collage-item';
-  div.style.cssText = 'position:absolute;inset:0;overflow:hidden;';
-  const img = document.createElement('img');
-  img.src = p.src; img.alt = p.title;
-img.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:center 42%;';
-  div.appendChild(img); collage.appendChild(div);
-});
 
 const aboutPhoto = { src: 'photos/DSCF7349.jpg', title: 'self portrait' };
 const aboutSection = document.getElementById('aboutImage');
