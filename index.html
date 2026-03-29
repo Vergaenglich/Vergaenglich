@@ -46,10 +46,10 @@ img{-webkit-user-drag:none;user-drag:none;-webkit-user-select:none;user-select:n
 nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:flex-end;padding:24px 48px;background:linear-gradient(to bottom,rgba(245,243,239,0.95) 0%,rgba(245,243,239,0.4) 80%,transparent 100%);}
 .nav-links{display:flex;gap:32px;list-style:none;}
 .nav-links a{font-family:monospace;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);text-decoration:none;transition:color .2s;}
-.nav-links a:hover{color:var(--accent);}
+.nav-links a{...color:#f5f3ef;text-shadow:0 1px 3px rgba(0,0,0,0.5);}
 .btn{display:inline-block;padding:13px 32px;border:1px solid rgba(245,243,239,0.8);color:#f5f3ef;text-decoration:none;font-family:monospace;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;transition:background .25s,border-color .25s,color .25s;}
 .btn:hover{background:var(--accent);border-color:var(--accent);color:var(--bg);}
-.btn-outline{background:none;border:1px solid var(--accent2); ;}
+.btn-outline{background:none;border:1px solid #1a1814;color:#1a1814;}
 
 /* Improved Hero - Modern & Spacious */
 .hero {
@@ -200,9 +200,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 @media(max-width:600px){.form-row{grid-template-columns:1fr;}}
 .form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
 .form-group label{font-family:monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);}
-.form-group input,.form-group select,.form-group textarea{background:#ece9e3;border:1px solid #c8c3bb;color:var(--fg);
+.form-group input,.form-group select,.form-group textarea{background:#f5f3ef;border:1px solid #c8c3bb;color:var(--fg);font-family:'EB Garamond',serif;font-size:1rem;padding:12px 16px;outline:none;transition:border-color .2s;width:100%;-webkit-appearance:none;}
 .form-group select{ ;}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--accent2);}
 .form-group textarea{resize:vertical;min-height:120px;}
 .form-submit{margin-top:8px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
 .form-note{font-size:0.78rem;color:var(--muted); }
@@ -367,6 +366,8 @@ footer{padding:32px 52px;border-top:1px solid #1a1612;display:flex;align-items:c
     <h2>Let's make something together</h2>
 </div>
 <a href="#enquiryForm" class="btn">Write a message</a>
+<a href="#enquiryForm" class="btn" style="border-color:#1a1814;color:#1a1814;">Write a message</a>
+
 </section>
 
 <footer>
@@ -430,7 +431,7 @@ CATS.forEach(cat => {
   filterRow.appendChild(btn);
 });
 
-let visibleCount = 6;
+let visibleCount = window.innerWidth > 768 ? 12 : 6;
 
 function renderGallery() {
   const gallery = document.getElementById('gallery');
@@ -453,8 +454,7 @@ function renderGallery() {
     }
     const overlay = document.createElement('div');
     overlay.className = 'photo-overlay';
-overlay.innerHTML = `<div class="photo-title">${p.title}</div><div class="photo-caption">${p.caption}</div><div class="photo-city">${p.city}</div>`;
-    item.appendChild(img);
+overlay.innerHTML = '';    item.appendChild(img);
     item.appendChild(overlay);
   item.addEventListener('click', () => openLightbox(i));
 item.style.opacity = '0';
