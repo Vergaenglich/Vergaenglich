@@ -113,7 +113,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .hero-tagline {
   font-size: 1.2rem;
   color: rgba(245,243,239,0.85);
-  font-style: italic;
   margin-bottom: 28px;
 }
 
@@ -255,7 +254,7 @@ footer{padding:32px 52px;border-top:1px solid #1a1612;display:flex;align-items:c
   <div class="hero-left">
     <p class="hero-eyebrow">Photography</p>
     <h1 class="hero-title">Vergänglich</h1>
-    <p class="hero-tagline">every moment is worth remembering.</p>
+    <p class="hero-tagline">Beauty lives in the overlooked.</p>
     <p class="hero-desc">
       Beauty is everywhere, if you slow down enough to notice it. In the decay and the rush, 
       in the quiet street and the crowded square. These photographs are about those moments 
@@ -391,7 +390,11 @@ footer{padding:32px 52px;border-top:1px solid #1a1612;display:flex;align-items:c
     <button id="lbPrint" style="font-family:monospace;font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;background:none;border:1px solid rgba(212,197,169,0.5);color:#d4c5a9;padding:6px 16px;">Order print</button>
   </div>
 </div>
+    <button class="lightbox-close" id="lbClose">close ✕</button>
+  </div>
+</div>
 
+<script src="photos.js"></script>
 <script src="photos.js"></script>
 <script>
 document.addEventListener('contextmenu', e => { if (e.target.tagName === 'IMG') e.preventDefault(); });
