@@ -142,7 +142,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 @media(max-width:900px){.masonry-grid{grid-template-columns:1fr 1fr;padding:24px 24px 60px;}}
 @media(max-width:560px){.masonry-grid{grid-template-columns:1fr;padding:24px 24px 60px;}}
 
-.photo-item{break-inside:avoid;margin-bottom:40px;overflow:hidden;display:block; ;min-height:200px;}
+.photo-item{break-inside:avoid;margin-bottom:0px;overflow:hidden;display:block; ;min-height:200px;}
 .photo-item img{width:100%;height:50vh;object-fit:cover;display:block;transition:transform .9s cubic-bezier(0.25,1,0.5,1),filter .5s,opacity .5s;filter:contrast(1.03) brightness(0.97);opacity:0;background:#1a1814;}
 .photo-item img.loaded{opacity:1;}
 .photo-item:hover img{transform:scale(1.02);filter:contrast(1.06) brightness(1);}
@@ -392,7 +392,6 @@ footer{padding:32px 52px;border-top:1px solid #1a1612;display:flex;align-items:c
   </div>
 </div>
 
-<script src="photos.js"></script>
 <script src="photos.js"></script>
 <script>
 document.addEventListener('contextmenu', e => { if (e.target.tagName === 'IMG') e.preventDefault(); });
