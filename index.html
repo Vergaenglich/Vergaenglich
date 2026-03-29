@@ -43,10 +43,9 @@ img{-webkit-user-drag:none;user-drag:none;-webkit-user-select:none;user-select:n
 .lightbox-img-wrap::after{content:'';position:absolute;inset:0;z-index:2;}
 
 
-nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:flex-end;padding:24px 48px;background:linear-gradient(to bottom,rgba(245,243,239,0.95) 0%,rgba(245,243,239,0.4) 80%,transparent 100%);}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:flex-end;padding:24px 48px;background:linear-gradient(to bottom,rgba(26,24,20,0.4) 0%,transparent 100%);}
 .nav-links{display:flex;gap:32px;list-style:none;}
-.nav-links a{font-family:monospace;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);text-decoration:none;transition:color .2s;}
-.nav-links a{...color:#f5f3ef;text-shadow:0 1px 3px rgba(0,0,0,0.5);}
+.nav-links a{font-family:monospace;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:#f5f3ef;text-shadow:0 1px 3px rgba(0,0,0,0.5);text-decoration:none;transition:color .2s;}
 .btn{display:inline-block;padding:13px 32px;border:1px solid rgba(245,243,239,0.8);color:#f5f3ef;text-decoration:none;font-family:monospace;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;transition:background .25s,border-color .25s,color .25s;}
 .btn:hover{background:var(--accent);border-color:var(--accent);color:var(--bg);}
 .btn-outline{background:none;border:1px solid #1a1814;color:#1a1814;}
@@ -161,9 +160,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .lightbox-inner{position:relative;max-width:90vw;max-height:92vh;display:flex;align-items:center;}
 .lightbox-img-wrap img{max-width:85vw;max-height:82vh;object-fit:contain;display:block;filter:contrast(1.04);}
 .lightbox-info{position:absolute;bottom:-52px;left:0;right:0;display:flex;align-items:flex-end;justify-content:space-between;}
-.lightbox-title{font-family:'GFS Didot',serif; font-size:1.1rem;color:var(--fg);}
-.lightbox-caption{font-family:'EB Garamond',serif;font-size:0.85rem;color:var(--muted); margin-top:2px;}
-.lightbox-city{font-family:monospace;font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);text-align:right;}
+.lightbox-title{font-family:'GFS Didot',serif;font-size:1.1rem;color:#f5f3ef;}
+.lightbox-caption{font-family:'EB Garamond',serif;font-size:0.85rem;color:#b0a08a;margin-top:2px;}
+.lightbox-city{font-family:monospace;font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:#d4c5a9;text-align:right;}
 .lightbox-close{position:absolute;top:-44px;right:0;background:none;border:none;color:var(--muted);font-family:monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase; ;transition:color .2s;}
 .lightbox-close:hover{color:var(--fg);}
 .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(232,226,217,0.25);font-size:1.8rem; ;transition:color .2s;padding:20px;}
@@ -365,8 +364,8 @@ footer{padding:32px 52px;border-top:1px solid #1a1612;display:flex;align-items:c
     <p class="label">Get in touch</p>
     <h2>Let's make something together</h2>
 </div>
-<a href="#enquiryForm" class="btn">Write a message</a>
 <a href="#enquiryForm" class="btn" style="border-color:#1a1814;color:#1a1814;">Write a message</a>
+
 
 </section>
 
@@ -475,8 +474,8 @@ setTimeout(() => { item.style.opacity = '1'; }, 50 + (i % 6) * 80);
     const moreBtn = document.createElement('button');
     moreBtn.textContent = 'View more';
     moreBtn.style.cssText = 'background:none;border:1px solid var(--accent2);color:var(--fg);font-family:monospace;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;padding:14px 48px;transition:background .25s,border-color .25s,color .25s;';
-    moreBtn.addEventListener('mouseenter', () => { moreBtn.style.background='var(--accent)'; moreBtn.style.borderColor='var(--accent)'; moreBtn.style.color='var(--bg)'; ring.classList.add('expanded'); });
-    moreBtn.addEventListener('mouseleave', () => { moreBtn.style.background='none'; moreBtn.style.borderColor='var(--accent2)'; moreBtn.style.color='var(--fg)'; ring.classList.remove('expanded'); });
+    moreBtn.addEventListener('mouseenter', () => { moreBtn.style.background='var(--accent)'; moreBtn.style.borderColor='var(--accent)'; moreBtn.style.color='var(--bg)'; });
+    moreBtn.addEventListener('mouseleave', () => { moreBtn.style.background='none'; moreBtn.style.borderColor='var(--accent2)'; moreBtn.style.color='var(--fg)'; });
     moreBtn.addEventListener('click', () => { visibleCount += 6; renderGallery(); });
     moreWrap.appendChild(moreBtn);
     gallery.after(moreWrap);
