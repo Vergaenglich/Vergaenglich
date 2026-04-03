@@ -327,7 +327,7 @@ document.addEventListener('touchstart', e => { if (e.target.tagName === 'IMG') {
 document.addEventListener('touchend', () => clearTimeout(touchTimer));
 document.addEventListener('keydown', e => { if ((e.ctrlKey || e.metaKey) && ['s','S'].includes(e.key)) e.preventDefault(); });
 
-const CATS = ['all','Selection','Solitary','Hope','Perspective',];
+const CATS = ['all','selection','solitary','hope','perspective',];
 const CAT_LABELS = { all:'All work', selection:'Selection', solitary:'Solitary', hope:'Hope', perspective:'Perspective'};
 
 let currentFilter = 'all';
