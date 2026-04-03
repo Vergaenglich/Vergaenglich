@@ -205,34 +205,34 @@ footer{padding:32px 52px;border-top:1px solid #1a1612;display:flex;align-items:c
 <section class="services-section" id="prints">
   <p class="label">Prints & Assignments</p>
   <h2>Live with the work</h2>
-  <p class="intro">Every image in this collection is available as a limited fine print. I also take on assignment work; documentary, portrait, editorial. If something moved you, feel free to share you thoughts!</p>
-<div class="services-grid">
-  <div class="service-card" onclick="orderService('print')">
-    <div class="service-icon">◻</div>
-    <h3>Fine Prints</h3>
-    <p>Feel free to reach out with your requirements and together, we will make sure you get the desired print.</p>
-  </div>
-  <div class="service-card" onclick="orderService('editorial')">
-    <div class="service-icon">◎</div>
-    <h3>Editorial & Documentary</h3>
-    <p>Assignment photography for magazines, books, cultural institutions, and brands that value honest, unposed imagery over perfection.</p>
-  </div>
-  <div class="service-card" onclick="orderService('portrait')">
-    <div class="service-icon">◈</div>
-    <h3>Portrait Sessions</h3>
-    <p>Unhurried walkaround portrait sessions. No posing, no direction, just seeing what emerges within a specific scenery!</p>
-  </div>
-  <div class="service-card" onclick="orderService('wedding')">
-    <div class="service-icon">◇</div>
-    <h3>Events & Weddings</h3>
-    <p>Honest, unobtrusive coverage of the moments that matter. No stiff poses, no artificial setups. Just the day as it actually happened, kept forever.</p>
-  </div>
-</div>
-<div class="contact-form-section" id="enquiryForm">
-    <h3>Make an enquiry</h3>
-    <p class="sub">Tell me what you're looking for! I'll get back to you within 48 hours.</p>
-     <form action="https://formspree.io/f/xreydygk" method="POST">
-      <div class="form-row">
+  <p class="intro">Every image in this collection is available as a limited fine print. I also take on assignment work — documentary, portrait, editorial. Select what interests you or write directly.</p>
+  <div class="services-form-layout">
+    <div class="services-grid" id="enquiryForm">
+      <div class="service-card" onclick="orderService('print')">
+        <div class="service-icon">◻</div>
+        <h3>Fine Prints</h3>
+        <p>Feel free to reach out with your requirements and together, we will make sure you get the desired print.</p>
+      </div>
+      <div class="service-card" onclick="orderService('editorial')">
+        <div class="service-icon">◎</div>
+        <h3>Editorial & Documentary</h3>
+        <p>Assignment photography for magazines, books, cultural institutions, and brands that value honest, unposed imagery over perfection.</p>
+      </div>
+      <div class="service-card" onclick="orderService('portrait')">
+        <div class="service-icon">◈</div>
+        <h3>Portrait Sessions</h3>
+        <p>Unhurried walkaround portrait sessions. No posing, no direction, just seeing what emerges within a specific scenery.</p>
+      </div>
+      <div class="service-card" onclick="orderService('wedding')">
+        <div class="service-icon">◇</div>
+        <h3>Events & Weddings</h3>
+        <p>Honest, unobtrusive coverage of the moments that matter. No stiff poses, no artificial setups. Just the day as it actually happened, kept forever.</p>
+      </div>
+    </div>
+    <div class="contact-form-section">
+      <h3>Make an enquiry</h3>
+      <p class="sub">Tell me what you're looking for — I'll get back to you within 48 hours.</p>
+      <form action="https://formspree.io/f/xreydygk" method="POST">
         <div class="form-group">
           <label for="fname">First name</label>
           <input type="text" id="fname" name="name" placeholder="Your name" required>
@@ -241,31 +241,31 @@ footer{padding:32px 52px;border-top:1px solid #1a1612;display:flex;align-items:c
           <label for="femail">Email</label>
           <input type="email" id="femail" name="email" placeholder="Your email" required>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="ftype">I'm interested in</label>
-        <select id="ftype" name="type">
-          <option value="">— select —</option>
-          <option value="print">A fine art print</option>
-          <option value="editorial">Editorial / documentary assignment</option>
-          <option value="portrait">Portrait session</option>
-          <option value="licensing">Image licensing</option>
-          <option value="wedding">Events & weddings</option>
-          <option value="other">Something else</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="fmsg">Message</label>
-        <textarea id="fmsg" name="message" placeholder="Tell me more about what you have in mind..."></textarea>
-      </div>
-      <div class="form-submit">
-        <button type="submit" class="btn btn-outline">Send enquiry</button>
-        <span class="form-note">All images are © Vergänglich. Reproduction without permission is prohibited.</span>
-      </div>
-    </form>
+        <div class="form-group">
+          <label for="ftype">I'm interested in</label>
+          <select id="ftype" name="type">
+            <option value="">— select —</option>
+            <option value="print">A fine art print</option>
+            <option value="editorial">Editorial / documentary assignment</option>
+            <option value="portrait">Portrait session</option>
+            <option value="licensing">Image licensing</option>
+            <option value="wedding">Events & weddings</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="fmsg">Message</label>
+          <textarea id="fmsg" name="message" placeholder="Tell me more about what you have in mind..."></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-outline">Send enquiry</button>
+          <span class="form-note">All images are © Vergänglich. Reproduction without permission is prohibited.</span>
+        </div>
+      </form>
+    </div>
   </div>
 </section>
-
+  
 <div class="divider"></div>
 
 <section class="about-section" id="about">
@@ -428,7 +428,7 @@ document.addEventListener('keydown', e => {
   if (!lb.classList.contains('open')) return;
   if (e.key === 'Escape') closeLightbox();
   if (e.key === 'ArrowLeft') { lightboxIndex = (lightboxIndex - 1 + filteredPhotos.length) % filteredPhotos.length; updateLightbox(); }
-  if (e.key === 'ArrowRight') { lightboxIndex = (lightboxIndex + 1) % filteredPhotos.length; updateLightbox(); }
+  if (e.key === 'ArrowRight') { lightboxIndex = (lightboxIndex + 1) % filteredPhotos.length; updateLightbox();}
 });
 
   function orderPrint(title) {
@@ -436,7 +436,12 @@ document.addEventListener('keydown', e => {
   document.getElementById('fmsg').value = 'I am interested in ordering a print of "' + title + ' "(add size and any other requirements - prizes depend on shipping country and size, which we will discuss transparently over email).';
   document.getElementById('enquiryForm').scrollIntoView({ behavior: 'smooth' });
 }
-
+.services-form-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:0;}
+.contact-form-section{max-width:100%;scroll-margin-top:80px;}
+.contact-form-section h3{font-family:'GFS Didot',serif;font-size:1.8rem;font-weight:400;margin-bottom:8px;}
+.contact-form-section .sub{color:var(--muted);font-size:0.88rem;margin-bottom:32px;});
+  
 function orderService(type) {
   document.getElementById('ftype').value = type;
   document.getElementById('fmsg').value = '';
