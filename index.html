@@ -328,7 +328,7 @@ document.addEventListener('touchend', () => clearTimeout(touchTimer));
 document.addEventListener('keydown', e => { if ((e.ctrlKey || e.metaKey) && ['s','S'].includes(e.key)) e.preventDefault(); });
 
 const CATS = ['all','street','portrait','landscape','documentary','abstract'];
-const CAT_LABELS = { all:'All work', street:'Street', portrait:'Portrait', landscape:'Landscape', documentary:'Documentary', abstract:'Abstract' };
+const CAT_LABELS = { all:'All work', selection:'Selection', solitary:'Solitary', hope:'Hope', perspective:'Perspective'};
 
 let currentFilter = 'all';
 let lightboxIndex = 0;
