@@ -78,20 +78,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .photo-highlight-badge{position:absolute;top:18px;left:18px;z-index:4;background:var(--accent);color:var(--bg);font-family:monospace;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;padding:4px 10px;}
 .print-btn{display:inline-block;margin-top:12px;padding:6px 16px;border:1px solid var(--accent2);color:var(--fg);font-family:monospace;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase; ;text-decoration:none;}
 
-.lightbox{position:fixed;inset:0;background:rgba(8,6,4,0.97);z-index:2000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
+.lightbox{position:fixed;inset:0;background:rgba(245,243,239,0.97);z-index:2000;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
 .lightbox.open{opacity:1;pointer-events:all;}
-.lightbox-inner{position:relative;max-width:90vw;max-height:92vh;display:flex;align-items:center;}
-.lightbox-img-wrap img{max-width:85vw;max-height:82vh;object-fit:contain;display:block;filter:contrast(1.04);}
-.lightbox-info{position:absolute;bottom:-52px;left:0;right:0;display:flex;align-items:flex-end;justify-content:space-between;}
-.lightbox-title{font-family:'GFS Didot',serif;font-size:1.1rem;color:#f5f3ef;}
-.lightbox-caption{font-family:'EB Garamond',serif;font-size:0.85rem;color:#b0a08a;margin-top:2px;}
-.lightbox-city{font-family:monospace;font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:#d4c5a9;text-align:right;}
-.lightbox-close{position:absolute;top:-44px;right:0;background:none;border:none;color:var(--muted);font-family:monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase; ;transition:color .2s;}
+.lightbox-inner{position:relative;max-width:80vw;max-height:80vh;display:flex;flex-direction:column;align-items:center;gap:24px;}
+.lightbox-img-wrap img{max-width:80vw;max-height:70vh;object-fit:contain;display:block;filter:contrast(1.04);}
+.lightbox-info{width:100%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;}
+.lightbox-meta{display:flex;flex-direction:column;gap:4px;}
+.lightbox-title{font-family:'GFS Didot',serif;font-size:1rem;color:var(--fg);}
+.lightbox-caption{font-family:'EB Garamond',serif;font-size:0.85rem;color:var(--muted);margin-top:2px;}
+.lightbox-city{font-family:monospace;font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);text-align:right;}
+.lightbox-close{position:absolute;top:-48px;right:0;background:none;border:none;color:var(--muted);font-family:monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;transition:color .2s;cursor:pointer;}
 .lightbox-close:hover{color:var(--fg);}
-.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(232,226,217,0.25);font-size:1.8rem; ;transition:color .2s;padding:20px;}
+.lightbox-nav{position:absolute;top:40%;transform:translateY(-50%);background:none;border:none;color:rgba(26,24,20,0.2);font-size:1.8rem;transition:color .2s;padding:20px;cursor:pointer;}
 .lightbox-nav:hover{color:var(--fg);}
-.lightbox-prev{left:-60px;}
-.lightbox-next{right:-60px;}
+.lightbox-prev{left:-80px;}
+.lightbox-next{right:-80px;}
 
 .about-section{padding:100px 52px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;border-top:1px solid #1a1612;}
 .about-text-block .label{font-family:monospace;font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
@@ -304,20 +305,18 @@ footer{padding:32px 52px;border-top:1px solid #1a1612;display:flex;align-items:c
       <img class="lightbox-img" id="lbImg" src="" alt="">
     </div>
     <button class="lightbox-nav lightbox-next" id="lbNext">&#8594;</button>
-   <div class="lightbox-info">
-  <div>
-    <div class="lightbox-title" id="lbTitle"></div>
-    <div class="lightbox-caption" id="lbCaption"></div>
-  </div>
-  <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;">
-    <div class="lightbox-city" id="lbCity"></div>
-    <button id="lbPrint" style="font-family:monospace;font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;background:none;border:1px solid rgba(212,197,169,0.5);color:#d4c5a9;padding:6px 16px;">Order print</button>
-  </div>
-</div>
+    <div class="lightbox-info">
+      <div class="lightbox-meta">
+        <div class="lightbox-title" id="lbTitle"></div>
+        <div class="lightbox-caption" id="lbCaption"></div>
+      </div>
+      <button id="lbPrint" style="font-family:monospace;font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;background:none;border:1px solid #1a1814;color:#1a1814;padding:8px 20px;cursor:pointer;">Order print</button>
+      <div class="lightbox-city" id="lbCity"></div>
+    </div>
     <button class="lightbox-close" id="lbClose">close ✕</button>
   </div>
 </div>
-
+  
 <script src="photos.js"></script>
 <script>
 document.addEventListener('contextmenu', e => { if (e.target.tagName === 'IMG') e.preventDefault(); });
