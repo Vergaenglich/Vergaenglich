@@ -17,13 +17,13 @@
 const PHOTOS = [
 
   // --- Selection ---
-  { src: 'photos/DSC02616_2.jpeg',     title: 'Baguette',          caption: ' ',                  category: 'selection',       city: 'Durbuy'    },
   { src: 'photos/Idea of self-2.jpg',  title: 'Perception of Self',         caption: ' ',         category: 'selection',       city: 'Berlin',  highlight: true },
   { src: 'photos/DSCF3598.jpeg',       title: 'Crosswalk',           caption: ' ',                category: 'selection',       city: 'Chicago'  },
   { src: 'photos/DSCF1107.jpg',        title: 'Cover Shot',               caption: ' ',           category: 'selection',       city: 'Berlin',    highlight: true  },
   { src: 'photos/DSCF5452.jpg',        title: 'Collection',        caption: ' ',                  category: 'selection',       city: 'Lisbon'   },
   { src: 'photos/DSCF4550.jpg',        title: 'Fantasy',  caption: ' ',                           category: 'selection',       city: 'Berlin'   },
   { src: 'photos/DSC03187.jpeg',       title: 'Oberbaumbrücke',      caption: ' ',                category: 'selection',       city: 'Berlin',    highlight: true  },
+  { src: 'photos/DSC02616_2.jpeg',     title: 'Baguette',          caption: ' ',                  category: 'selection',       city: 'Durbuy'    },
   { src: 'photos/DSCF6748.jpg',        title: 'Malecon', caption: ' ',                            category: 'selection',       city: 'Havana' },
   { src: 'photos/DSCF7278.jpg',        title: 'Impala', caption: ' ',                             category: 'selection',       city: 'Havana' },
   { src: 'photos/DSC03638.jpeg',       title: 'Help',             caption: ' ',                   category: 'selection',       city: 'Berlin',    highlight: true  },
