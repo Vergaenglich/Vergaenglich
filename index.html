@@ -116,9 +116,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .service-card h3{font-family:'GFS Didot',serif; font-size:1.3rem;font-weight:400;color:var(--fg);margin-bottom:12px;}
 .service-card p{font-size:0.88rem;color:var(--muted);line-height:1.8;margin-bottom:24px;}
 
-.contact-form-section{max-width:680px;scroll-margin-top:80px;margin-top:64px;padding-top:64px;border-top:1px solid #d4cfc8;}
-.contact-form-section h3{font-family:'GFS Didot',serif;font-size:2rem;font-weight:400;margin-bottom:8px;}
-.contact-form-section .sub{color:var(--muted);font-size:0.88rem;margin-bottom:40px;}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
 @media(max-width:600px){.form-row{grid-template-columns:1fr;}}
 .form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
@@ -147,20 +144,19 @@ footer{padding:32px 52px;border-top:1px solid #1a1612;display:flex;align-items:c
 ::-webkit-scrollbar{width:4px;}
 ::-webkit-scrollbar-track{background:var(--bg);}
 ::-webkit-scrollbar-thumb{background:#3a3530;border-radius:2px;}
-
+.contact-section{padding:80px 52px 100px;border-top:1px solid #1a1612;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:40px;}
 @media(max-width:768px){
-  .nav{padding:20px 24px;}
+  nav{padding:20px 24px;}
   .hero-left{width:100%;padding:80px 24px 60px;}
   .gallery-header,.masonry-grid,.about-section,.services-section,.contact-section{padding-left:24px;padding-right:24px;}
-  .masonry-grid{grid-template-columns:1fr 1fr;column-gap:4px;row-gap:4px;padding:16px 16px 40px;}  
+  .masonry-grid{grid-template-columns:1fr 1fr;column-gap:4px;row-gap:4px;padding:16px 16px 40px;}
   .about-section{grid-template-columns:1fr;}
   .services-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;}
   .service-card{padding:20px 16px;}
-  .services-form-layout{grid-template-columns:1fr;}
   .service-card p{font-size:0.78rem;}
   .service-icon{font-size:1rem;margin-bottom:12px;}
   .service-card h3{font-size:1rem;}
-  .html,body{overflow-x: hidden;width: 100%;}* {max-width: 100%;box-sizing: border-box;
+  .contact-section{padding:80px 52px 100px;border-top:1px solid #1a1612;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:40px;}
   .lightbox-inner{max-width:95vw;max-height:90vh;}
   .lightbox-img-wrap img{max-width:95vw;max-height:60vh;}
   .lightbox-prev{left:-20px;}
@@ -442,22 +438,18 @@ document.addEventListener('keydown', e => {
 
   function orderPrint(title) {
   document.getElementById('ftype').value = 'print';
-  document.getElementById('fmsg').value = 'I am interested in ordering a print of "' + title + ' "(add size and any other requirements - prizes depend on shipping country and size, which we will discuss transparently over email).';
+  document.getElementById('fmsg').value = 'I am interested in ordering a print of "' + title + '" (add size and any other requirements).';
   document.getElementById('enquiryForm').scrollIntoView({ behavior: 'smooth' });
 }
-.services-form-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
-.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:0;}
-.contact-form-section{max-width:100%;scroll-margin-top:80px;}
-.contact-form-section h3{font-family:'GFS Didot',serif;font-size:1.8rem;font-weight:400;margin-bottom:8px;}
-.contact-form-section .sub{color:var(--muted);font-size:0.88rem;margin-bottom:32px;});
-  
+
 function orderService(type) {
   document.getElementById('ftype').value = type;
   document.getElementById('fmsg').value = '';
   document.getElementById('enquiryForm').scrollIntoView({ behavior: 'smooth' });
 }
-  
+
 renderGallery();
+  
 </script>
 </body>
 </html>
