@@ -99,7 +99,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .about-text-block h2{font-family:'GFS Didot',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:400;line-height:1.2;margin-bottom:28px;}
 .about-text-block h2 em{ color:var(--accent);}
 .about-text-block p{color:var(--muted);line-height:1.9;font-size:0.95rem;margin-bottom:16px;}
-.about-image{position:relative;grid-row:1;}
+.about-image{position:relative;}
 .about-image img{width:100%;height:600px;object-fit:cover;display:block;filter:contrast(1.05) brightness(1.05);}
 .about-image::before{content:'';position:absolute;top:-8px;left:-8px;right:8px;bottom:8px;border:1px solid var(--accent2);opacity:0.4;pointer-events:none;z-index:-1;}
 
@@ -112,13 +112,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 @media(max-width:560px){.services-grid{grid-template-columns:1fr;}}
 .service-card{background:var(--bg2);padding:40px 36px;border:1px solid #1e1a16;transition:border-color .3s,background .3s;cursor:pointer;}
 .service-card:hover{border-color:var(--accent2);background:#e8e4dc;}
-.service-icon{font-size:1.4rem;margin-bottom:20px;filter:grayscale(1) brightness(1.5);}
+.service-icon{font-size:1.4rem;margin-bottom:20px;color:var(--fg);}
 .service-card h3{font-family:'GFS Didot',serif; font-size:1.3rem;font-weight:400;color:var(--fg);margin-bottom:12px;}
 .service-card p{font-size:0.88rem;color:var(--muted);line-height:1.8;margin-bottom:24px;}
 
-.contact-form-section h3 {font-family: 'GFS Didot', serif;font-size: clamp(2.2rem, 5vw, 2.8rem);font-weight: 400;line-height: 1.05;margin-bottom: 20px;text-align: center;}
-.contact-form-section .sub {font-size: 1.05rem;text-align: center;max-width: 520px;margin: 0 auto 48px auto;line-height: 1.6;}
-.contact-form-section .sub {text-align: center;max-width: 520px;margin: 0 auto 40px auto;}
+.contact-form-section{max-width:680px;scroll-margin-top:80px;margin-top:64px;padding-top:64px;border-top:1px solid #d4cfc8;}
+.contact-form-section h3{font-family:'GFS Didot',serif;font-size:2rem;font-weight:400;margin-bottom:8px;}
+.contact-form-section .sub{color:var(--muted);font-size:0.88rem;margin-bottom:40px;}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
 @media(max-width:600px){.form-row{grid-template-columns:1fr;}}
 .form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
@@ -147,10 +147,10 @@ footer{padding:32px 52px;border-top:1px solid #1a1612;display:flex;align-items:c
 ::-webkit-scrollbar-thumb{background:#3a3530;border-radius:2px;}
 
 @media(max-width:768px){
-  nav{padding:20px 24px;}
+  .nav{padding:20px 24px;}
   .hero-left{width:100%;padding:80px 24px 60px;}
   .gallery-header,.masonry-grid,.about-section,.services-section,.contact-section{padding-left:24px;padding-right:24px;}
-  .masonry-grid { columns: 1 !important; column-gap: 0; }
+  .masonry-grid{grid-template-columns:1fr 1fr;column-gap:4px;row-gap:4px;padding:16px 16px 40px;}  
   .about-section{grid-template-columns:1fr;}
   .services-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;}
   .service-card{padding:20px 16px;}
@@ -159,6 +159,12 @@ footer{padding:32px 52px;border-top:1px solid #1a1612;display:flex;align-items:c
   .service-icon{font-size:1rem;margin-bottom:12px;}
   .service-card h3{font-size:1rem;}
   .html,body{overflow-x: hidden;width: 100%;}* {max-width: 100%;box-sizing: border-box;
+  .lightbox-inner{max-width:95vw;max-height:90vh;}
+  .lightbox-img-wrap img{max-width:95vw;max-height:60vh;}
+  .lightbox-prev{left:-20px;}
+  .lightbox-next{right:-20px;}
+  .lightbox-info{grid-template-columns:1fr;gap:8px;text-align:center;}
+  .lightbox-city{text-align:center;}
 }
 
 </style>
@@ -206,34 +212,34 @@ footer{padding:32px 52px;border-top:1px solid #1a1612;display:flex;align-items:c
 <section class="services-section" id="prints">
   <p class="label">Prints & Assignments</p>
   <h2>Live with the work</h2>
-  <p class="intro">Every image in this collection is available as a limited fine print. I also take on assignment work — documentary, portrait, editorial. Select what interests you or write directly.</p>
-  <div class="services-form-layout">
-    <div class="services-grid" id="enquiryForm">
-      <div class="service-card" onclick="orderService('print')">
-        <div class="service-icon">◻</div>
-        <h3>Fine Prints</h3>
-        <p>Feel free to reach out with your requirements and together, we will make sure you get the desired print.</p>
-      </div>
-      <div class="service-card" onclick="orderService('editorial')">
-        <div class="service-icon">◎</div>
-        <h3>Editorial & Documentary</h3>
-        <p>Assignment photography for magazines, books, cultural institutions, and brands that value honest, unposed imagery over perfection.</p>
-      </div>
-      <div class="service-card" onclick="orderService('portrait')">
-        <div class="service-icon">◈</div>
-        <h3>Portrait Sessions</h3>
-        <p>Unhurried walkaround portrait sessions. No posing, no direction, just seeing what emerges within a specific scenery.</p>
-      </div>
-      <div class="service-card" onclick="orderService('wedding')">
-        <div class="service-icon">◇</div>
-        <h3>Events & Weddings</h3>
-        <p>Honest, unobtrusive coverage of the moments that matter. No stiff poses, no artificial setups. Just the day as it actually happened, kept forever.</p>
-      </div>
+  <p class="intro">Every image in this collection is available as a limited fine print. I also take on assignment work — documentary, portrait, editorial. Click any card to pre-fill your enquiry.</p>
+  <div class="services-grid">
+    <div class="service-card" onclick="orderService('print')">
+      <div class="service-icon">◻</div>
+      <h3>Fine Prints</h3>
+      <p>Feel free to reach out with your requirements and together, we will make sure you get the desired print.</p>
     </div>
-    <div class="contact-form-section">
-      <h3>Make an enquiry</h3>
-      <p class="sub">Tell me what you're looking for — I'll get back to you within 48 hours.</p>
-      <form action="https://formspree.io/f/xreydygk" method="POST">
+    <div class="service-card" onclick="orderService('editorial')">
+      <div class="service-icon">◎</div>
+      <h3>Editorial & Documentary</h3>
+      <p>Assignment photography for magazines, books, cultural institutions, and brands that value honest, unposed imagery over perfection.</p>
+    </div>
+    <div class="service-card" onclick="orderService('portrait')">
+      <div class="service-icon">◈</div>
+      <h3>Portrait Sessions</h3>
+      <p>Unhurried walkaround portrait sessions. No posing, no direction, just seeing what emerges.</p>
+    </div>
+    <div class="service-card" onclick="orderService('wedding')">
+      <div class="service-icon">◇</div>
+      <h3>Events & Weddings</h3>
+      <p>Honest, unobtrusive coverage of the moments that matter. Just the day as it actually happened, kept forever.</p>
+    </div>
+  </div>
+  <div class="contact-form-section" id="enquiryForm">
+    <h3>Make an enquiry</h3>
+    <p class="sub">Tell me what you're looking for — I'll get back to you within 48 hours.</p>
+    <form action="https://formspree.io/f/xreydygk" method="POST">
+      <div class="form-row">
         <div class="form-group">
           <label for="fname">First name</label>
           <input type="text" id="fname" name="name" placeholder="Your name" required>
@@ -242,28 +248,28 @@ footer{padding:32px 52px;border-top:1px solid #1a1612;display:flex;align-items:c
           <label for="femail">Email</label>
           <input type="email" id="femail" name="email" placeholder="Your email" required>
         </div>
-        <div class="form-group">
-          <label for="ftype">I'm interested in</label>
-          <select id="ftype" name="type">
-            <option value="">— select —</option>
-            <option value="print">A fine art print</option>
-            <option value="editorial">Editorial / documentary assignment</option>
-            <option value="portrait">Portrait session</option>
-            <option value="licensing">Image licensing</option>
-            <option value="wedding">Events & weddings</option>
-            <option value="other">Something else</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="fmsg">Message</label>
-          <textarea id="fmsg" name="message" placeholder="Tell me more about what you have in mind..."></textarea>
-        </div>
-        <div class="form-submit">
-          <button type="submit" class="btn btn-outline">Send enquiry</button>
-          <span class="form-note">All images are © Vergänglich. Reproduction without permission is prohibited.</span>
-        </div>
-      </form>
-    </div>
+      </div>
+      <div class="form-group">
+        <label for="ftype">I'm interested in</label>
+        <select id="ftype" name="type">
+          <option value="">— select —</option>
+          <option value="print">A fine art print</option>
+          <option value="editorial">Editorial / documentary assignment</option>
+          <option value="portrait">Portrait session</option>
+          <option value="licensing">Image licensing</option>
+          <option value="wedding">Events & weddings</option>
+          <option value="other">Something else</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="fmsg">Message</label>
+        <textarea id="fmsg" name="message" placeholder="Tell me more about what you have in mind..."></textarea>
+      </div>
+      <div class="form-submit">
+        <button type="submit" class="btn btn-outline">Send enquiry</button>
+        <span class="form-note">All images are © Vergänglich. Reproduction without permission is prohibited.</span>
+      </div>
+    </form>
   </div>
 </section>
   
