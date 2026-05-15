@@ -21,6 +21,8 @@ const PHOTOS = [
   { src: 'photos/DSCF3598.jpeg',       title: 'Crosswalk',           caption: ' ',                category: 'selection',       city: 'Chicago'  },
   { src: 'photos/DSCF1107.jpg',        title: 'Cover Shot',               caption: ' ',           category: 'selection',       city: 'Berlin',    highlight: true  },
   { src: 'photos/DSCF5452.jpg',        title: 'Collection',        caption: ' ',                  category: 'selection',       city: 'Lisbon'   },
+  { src: 'photos/L1000131.jpg',        title: 'Drawing',             caption: ' ',                category: 'selection',       city: 'Berlin'   },
+  { src: 'photos/L1000562.jpg',        title: 'Multiverse',          caption: ' ',                category: 'selection',       city: 'Berlin'   },
   { src: 'photos/DSC03638.jpeg',       title: 'Help',             caption: ' ',                   category: 'selection',       city: 'Berlin',    highlight: true  },
   { src: 'photos/DSCF4550.jpg',        title: 'Fantasy',  caption: ' ',                           category: 'selection',       city: 'Berlin'   },
   { src: 'photos/DSC03187.jpeg',       title: 'Oberbaumbrücke',      caption: ' ',                category: 'selection',       city: 'Berlin',    highlight: true  },
@@ -37,6 +39,13 @@ const PHOTOS = [
   { src: 'photos/DSCF8617.jpg',        title: 'Held by Paint',          caption: ' ',             category: 'selection',       city: 'Havana'   },
   { src: 'photos/DSCF6635.jpg',        title: 'El Barrio',    caption: ' ',                       category: 'selection',       city: 'Havana'   },
   { src: 'photos/DSCF2232.jpg',        title: 'Boots',               caption: ' ',                category: 'selection',       city: 'Vilnius'   },
+  { src: 'photos/L1000366.jpg',        title: 'Skate',               caption: ' ',                category: 'selection',       city: 'Berlin'   },
+  { src: 'photos/L1000373.jpg',        title: 'Pause',               caption: ' ',                category: 'selection',       city: 'Berlin'   },
+  { src: 'photos/L1000393.jpg',        title: 'Gang',                caption: ' ',                category: 'selection',       city: 'Berlin'   },
+  { src: 'photos/L1000462.jpg',        title: 'Prepare',             caption: ' ',                category: 'selection',       city: 'Berlin'   },
+  { src: 'photos/L1000467.jpg',        title: 'Solid',               caption: ' ',                category: 'selection',       city: 'Berlin'   },
+  { src: 'photos/L1000610.jpg',        title: 'Passion',             caption: ' ',                category: 'selection',       city: 'Berlin'   },
+
 
 
   // --- Solitary ---
